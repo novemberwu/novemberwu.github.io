@@ -1,8 +1,16 @@
 title: Wu Yuan's Docs
-description: A starter template for a Jeykll site using the Just the Docs theme!
+description: A Jekyll theme for documentation
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://novemberwu.github.io/
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
+
+# Enable or disable the side/mobile menu globally
+# Nav menu can also be selectively enabled or disabled using page variables or the minimal layout
+nav_enabled: true
+
+# Sort order for navigation links
+# nav_sort: case_insensitive # default, equivalent to nil
+nav_sort: case_sensitive # Capital letters sorted before lowercase
