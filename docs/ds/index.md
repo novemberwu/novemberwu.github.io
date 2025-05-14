@@ -15,7 +15,7 @@ CSA or Basic Java programming
 
 ### 2025 Fall
 
-| Unit  | Lecture          |Notes|Lab/Homework |
+| Unit  | Lecture          |Notes|Lab/HW |
 |:------|:------------------|:------|:--|
 | 1 | **Course Introduction** |
 | 2 | **Java Programming Review** |
@@ -27,15 +27,15 @@ CSA or Basic Java programming
 | 8 | **Priority Queue** ||
 | 9 | **HeapSort**||
 
-## Fall Semester Evaluation
+#### Fall Semester Evaluation
 
-| Class Participation | Lab/Homework|Attendence |Midterm |Final Exam |
+| Class Participation | Lab/HW|Attendence |Midterm |Final Exam |
 |--:|-----:|------:|---:|---:|
 | 10%| 30%|10%|25%|25%|
 
 ### 2025 Spring
 
-| Unit  | Lecture          |Notes|Lab/Homework |
+| Unit  | Lecture          |Notes|Lab/HW|
 |:------|:------------------|:------|:---|
 |1| **Union Find Algorithm** ||
 |2| **Algorithm Analysis** ||
@@ -45,9 +45,10 @@ CSA or Basic Java programming
 |6| **Hashing**||
 |7| **Final Project**||
 
-## Spring Semester Evaluation
-| Class Participation | Lab/Homework|Attendence |Midterm |Final Exam |Project|
-|--:|-----:|------:|---:|---:|---:|
+#### Spring Semester Evaluation
+
+| Class Participation | Lab/HW|Attendence |Midterm |Final Exam | Final Project |
+|--:|-----:|------:|---:|---:|--:|
 | 10%| 20%|10%|20%|20%|20%|
 
 
