@@ -55,6 +55,20 @@ CSA or Basic Java programming
 
 
 
-## Primary Textbook and Resource Materials
+## Primary Textbook 
 * Robert Sedgewick & Kevin Wayne, Algorithms (4th Edition) 
 * C.L.R.S, Introduction to Algorithms (4th Edition)
+* Bruce Eckel, On Java 8 
+* Robert Sedgewick and Kevin Wayne, Computer Science: An Interdisciplinary Approach
+
+## Resources
+### Java
+* [Java 17 Document](https://docs.oracle.com/en/java/javase/17/docs/api/)
+
+### Data Strucure and Algorithms
+* [Data Structure Visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+* [Algorithm Visualization](https://visualgo.net/en)
+* [Data Structure Wikibook](https://en.wikibooks.org/wiki/Data_Structures)
+
+### Asymptotics
+* [Big-O CheatSheet](https://www.bigocheatsheet.com/)
