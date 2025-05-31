@@ -10,7 +10,7 @@ This course provides an introduction to modelling of computational problems. It 
 ## Prerequisites
 CSA or Basic Java programming
 
-## Course Goald and Deliverables
+## Course Goal and Deliverables
 
 
 ## Pacing Guide
