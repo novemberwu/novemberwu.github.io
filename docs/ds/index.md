@@ -10,15 +10,17 @@ This course provides an introduction to modelling of computational problems. It 
 ## Prerequisites
 CSA or Basic Java programming
 
+## Course Goald and Deliverables
+
 
 ## Pacing Guide
 
 ### 2025 Fall
 
-| Unit  | Lecture          |Notes|Lab/HW |
+| Unit  | Lecture          |Slides|Lab/HW |
 |:------|:------------------|:------|:--|
-| 1 | **Course Introduction** |
-| 2 | **Java Programming Review** |
+| 1 | **Course Introduction** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)||
+| 2 | **Java Programming Review** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)||
 | 3 | **Array and Linked Lists**      |    |
 | 4 | **Stack and Queues** |   |
 | 5 | **Elementory Sorts** <br>  - bubble sort <br> - selection sort <br> - insertion sort ||
@@ -35,7 +37,7 @@ CSA or Basic Java programming
 
 ### 2025 Spring
 
-| Unit  | Lecture          |Notes|Lab/HW|
+| Unit  | Lecture          |Slides|Lab/HW|
 |:------|:------------------|:------|:---|
 |1| **Union Find Algorithm** ||
 |2| **Algorithm Analysis** ||
