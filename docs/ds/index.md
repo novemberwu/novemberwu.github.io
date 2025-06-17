@@ -21,7 +21,7 @@ CSA or Basic Java programming
 |:------|:------------------|:------|:--|
 | 1 | **Course Introduction** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)||
 | 2 | **Java Programming Review** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)||
-| 3 | **Array and Linked Lists**      |    |
+| 3 | **Array and Linked Lists**      |   [slides](https://docs.google.com/presentation/d/1E8aPUs6PDzqtXbSZRMyLU_7T28Xt7-U-4QsoiDlq500/edit?usp=sharing) |
 | 4 | **Stack and Queues** |   |
 | 5 | **Elementory Sorts** <br>  - bubble sort <br> - selection sort <br> - insertion sort ||
 | 6 | **Quick Sort** ||
