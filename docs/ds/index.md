@@ -1,7 +1,7 @@
 ---
 title: Data Structure & Algorithm
 layout: page
-nav_order: 3
+nav_order: 4
 ---
 # Data Structure & Algorithm
 {: .no_toc }

@@ -5,10 +5,10 @@ nav_order: 1
 ---
 
 # Welcome to Computer Science
-
-* [Data Structure]
-* [Computer Science Principles]
 * [Computer Science A]
+* [Computer Science Principles]
+* [Data Structure]
+
 
 
 
