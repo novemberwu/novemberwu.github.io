@@ -1,21 +1,25 @@
 ---
 title: Data Structure & Algorithm
 layout: page
-nav_order: 2
+nav_order: 3
 ---
 # Data Structure & Algorithm
+{: .no_toc }
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Course Description
 This course provides an introduction to modelling of computational problems. It covers the common data abstractions and algorithms to solve those problems correctly and efficiently. 
+
 ## Prerequisites
 CSA or Basic Java programming
 
-## Course Goal and Deliverables
 
-
-## Pacing Guide
-
-### 2025 Fall
+## 2025 Fall Pacing Guide
 
 | Unit  | Lecture          |Slides|Lab/HW |
 |:------|:------------------|:------|:--|
@@ -29,13 +33,13 @@ CSA or Basic Java programming
 | 8 | **Priority Queue** ||
 | 9 | **HeapSort**||
 
-#### Fall Semester Evaluation
+### Fall Semester Evaluation
 
 | Class Participation | Lab/HW|Attendence |Midterm |Final Exam |
 |--:|-----:|------:|---:|---:|
 | 10%| 30%|10%|25%|25%|
 
-### 2025 Spring
+## 2025 Spring
 
 | Unit  | Lecture          |Slides|Lab/HW|
 |:------|:------------------|:------|:---|
@@ -47,7 +51,7 @@ CSA or Basic Java programming
 |6| **Hashing**||
 |7| **Final Project**||
 
-#### Spring Semester Evaluation
+### Spring Semester Evaluation
 
 | Class Participation | Lab/HW|Attendence |Midterm |Final Exam | Final Project |
 |--:|-----:|------:|---:|---:|--:|
