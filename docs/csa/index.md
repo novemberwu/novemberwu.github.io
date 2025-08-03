@@ -42,13 +42,14 @@ nav_order: 2
 | 2.5 Implementing Selection and Iteration Algorithms |||||
 | 2.6 Implementing String Algorithms                  |||||
 | 2.7 Nested Iteration                                |||||
-| 2.8 Informal Run-Time Analysis                      ||||
+| 2.8 Informal Run-Time Analysis                      |||||
 
 
 ### Fall Semester Evaluation
-| Class Participation | Lab/HW|Attendence |Midterm |Final Exam |
-|---:|-----:|------:|---:|---:| 
-|10% | 30%|10%|25%|25%|
+
+| Class Participation | Lab/HW|Attendence |Midterm |Final Exam | Final Project |
+|--:|-----:|------:|---:|---:|--:|
+| 10%| 20%|10%|20%|20%|20%|
 
 ## 2025 Spring
 
