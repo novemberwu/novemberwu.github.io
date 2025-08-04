@@ -9,17 +9,16 @@ nav_order: 2
 {: .no_toc }
 
 
-
-
-
-## Class 
 ## Overview
+AP Computer Science A (AP CSA) is an introductory college-level computer science course focused on programming using the Java language. It's designed to be equivalent to a first-semester college computer science course. Students learn to analyze, write, and test code while exploring concepts like modularity, variables, and control structures. The course emphasizes object-oriented programming and design
+## Text Book
+![](../../assets/images/CS.png)
 ## 2025 Fall Pacing Guide
 
 | Topic                                               | Lecture              | Slides               | Lab/HW               |Duration|
 |:----------------------------------------------------|:---------------------|:---------------------|:---------------------|:---|
 | **Unit 1 Using Objects and Methods**                |||| 32 ~ 34 Class Period |
-| 1.1 Introduction                                    |||||
+| 1.1 Introduction                                    ||| Lab1                 ||
 | 1.2 Varialbe & Data Type                            |||||
 | 1.3 Expression and Output                           |||||
 | 1.4 Assignment and Input                            |||||
@@ -33,7 +32,7 @@ nav_order: 2
 | 1.12 Calling Instance Methods                       |||||
 | 1.13 String Manipulation                            |||||
 | 1.14 Documentation with Comments                    |||||
-| **Unit 2 Selection and Iteration**                  || | | 29 ~ 31 Class Period |
+| **Unit 2 Selection and Iteration**                  ||                      | | 29 ~ 31 Class Period |
 | 2.1 Algorithms with Selection and Repetition        |||||
 | 2.2 Boolean,if and nested if Statements             |||||
 | 2.3 Compound Boolean Expressions                    |||||
@@ -90,8 +89,9 @@ nav_order: 2
 |--:|-----:|------:|---:|---:|--:|
 | 10%| 20%|10%|20%|20%|20%|
 
-
+## Lab instruction
 ## References
+
 
 
 
