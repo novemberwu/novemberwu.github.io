@@ -14,6 +14,12 @@ nav_enabled: true
 # Sort order for navigation links
 # nav_sort: case_insensitive # default, equivalent to nil
 nav_sort: case_sensitive # Capital letters sorted before lowercase
+
+# math
+math: mathjax
+
+
+# callout configuration
 callouts_level: quiet # or loud
 callouts:
   highlight:

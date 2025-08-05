@@ -18,9 +18,9 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 | Topic                                               | Lecture              | Slides               | Lab/HW               |Duration|
 |:----------------------------------------------------|:---------------------|:---------------------|:---------------------|:---|
 | **Unit 1 Using Objects and Methods**                |||| 32 ~ 34 Class Period |
-| 1.1 Introduction                                    ||| Lab1                 ||
-| 1.2 Varialbe & Data Type                            |||||
-| 1.3 Expression and Output                           |||||
+| 1.1 Introduction                                    ||| [Lab 1]              ||
+| 1.2 Varialbe & Data Type                            ||| [Lab 2]              ||
+| 1.3 Expression and Output                           ||| [Lab 3]              ||
 | 1.4 Assignment and Input                            |||||
 | 1.5 Casting and Range of Variables                  |||||
 | 1.6 Compound Assignment Operator                    |||||
@@ -91,6 +91,11 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 
 ## Lab instruction
 ## References
+
+
+[Lab 1]: {% link docs/csa/lab1.md %}
+[Lab 2]: {% link docs/csa/lab2.md %}
+[Lab 3]: {% link docs/csa/lab3.md %}
 
 
 

@@ -6,13 +6,14 @@ layout: page
 
 ---
 
-# (AP) Lab Computer Science A
+# Lab1 Hello World
 {: .no_toc }
 
-## Goal
+## Goals
 * Set up the development environment
 * Able to compile the java program
 * Able to run the java program with arguments
+* Able to write program that takes input arguments
 
 ## Get Started
 
@@ -26,7 +27,7 @@ JDK 11 is needed to compile and run the code.
 Easy
 {: .label .label-green }
 
-* Run Java program in IDE
+
 Compile and run the **11hello/HelloWorld** program in Intellij. 
 Expected output is
 
@@ -35,8 +36,8 @@ Hello, World
 
 Process finished with exit code 0
 ```
-* Run Java program in Command line
-Compile and run the 11hello/HelloWorld program in command line
+
+Compile and run the **11hello/HelloWorld** program in command line
 
 ```
 cd 11hello
