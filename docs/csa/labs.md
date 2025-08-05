@@ -5,10 +5,10 @@ parent: Computer Science A
 layout: page
 
 ---
+# (AP) Lab1 Computer Science A
+## Lab Guidance
 
-# Lab Guidance
-
-## Hardness of assignment
+### Hardness of assignment
 Each assignment indicates how difficult it is
 
 
@@ -18,6 +18,6 @@ Each assignment indicates how difficult it is
 
 * `Hard` takes more than 1 hour
 
-## Debugging tips
+### Debugging tips
 
 
