@@ -5,7 +5,7 @@ parent: Computer Science A
 layout: page
 
 ---
-# (AP) Lab1 Computer Science A
+# (AP) Lab CSA
 ## Lab Guidance
 
 ### Hardness of assignment
