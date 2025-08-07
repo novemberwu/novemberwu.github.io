@@ -22,7 +22,7 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 | 1.2 Varialbe & Data Type                            ||| [Lab 2]              ||
 | 1.3 Expression and Output                           ||| [Lab 3]              ||
 | 1.4 Assignment and Input                            ||| [Lab 4]              ||
-| 1.5 Casting and Range of Variables                  |||||
+| 1.5 Casting and Range of Variables                  ||| [Lab 5]              ||
 | 1.6 Compound Assignment Operator                    |||||
 | 1.7 Method Signature and Class Method               |||||
 | 1.8 Math Class and APIs                             |||||                               
@@ -97,6 +97,7 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 [Lab 2]: {% link docs/csa/lab2.md %}
 [Lab 3]: {% link docs/csa/lab3.md %}
 [Lab 4]: {% link docs/csa/lab4.md %}
+[Lab 5]: {% link docs/csa/lab5.md %}
 
 
 

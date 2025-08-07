@@ -10,10 +10,16 @@ layout: page
 {: .no_toc }
 
 ## Goals
+{: .no_toc}
 * Set up the development environment
 * Able to compile the java program
 * Able to run the java program with arguments
 * Able to write program that takes input arguments
+
+## Task Summary
+{: .no_toc .text-delta }
+1. TOC
+{:toc}
 
 ## Get Started
 
@@ -23,7 +29,7 @@ layout: page
 {: .note }
 JDK 11 is needed to compile and run the code.
 
-### Task A: Hello World 
+## Task A: Hello World 
 Easy
 {: .label .label-green }
 
@@ -50,7 +56,7 @@ this should produce the same output as previous one
 You may need to specify your java class path in order to compile the code
 
 
-### Task B: Using Argument 
+## Task B: Using Argument 
 Easy
 {: .label .label-green }
 Compile and run the program **11hello/UseArgument** in IDE with populated input argument
@@ -70,7 +76,7 @@ Process finished with exit code 0
 You may need to install intellij LIFT plugin to run argument efficiently
 
 
-### Task C: Modify UseArgument 
+## Task C: Modify UseArgument 
 
 Easy
 {: .label .label-green }

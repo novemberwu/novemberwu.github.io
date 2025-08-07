@@ -6,15 +6,21 @@ layout: page
 
 ---
 # Lab 3 Expressions and Output
-
+{: .no_toc}
 ## Goals:
+{: .no_toc}
 * Able to use arithmetic expression
 * Able to use assignment expression
 * Able to use print to write to standard output
-* Able to use scanner to read from standard input
+* Able to use scanner to read from input (File/Keyboard)
+
+## Task Summary
+{: .no_toc .text-delta }
+1. TOC
+{:toc}
 
 
-## Task A: 
+## Task A: Arithmetic Expressions
 
 Easy
 {: .label .label-green }
@@ -32,7 +38,7 @@ Sample output
 50
 ```
 
-## Task B:
+## Task B: Read from the file
 
 Moderate
 {: .label .label-purple }
@@ -53,25 +59,3 @@ Sample output
 178
 ```
 
-## Task C
-
-Moderate
-{: .label .label-purple }
-
-Write a program that can distribute dollars among people. The program takes in 2 arguments.
-First argument is the dollar amount.
-Second argument is the number of people ( <= 10)
-The program prints out distributed amount for each person.
-if the total amount can not be evenly divided by number of people, a random person takes the residual
-
-{: .note }
-Adding up each people's fraction should get the total amount of money
-
-Sample input
-```
-java distributeMoney 2.5 3
-```
-Sample output
-```
-0.8 0.8 0.9
-```

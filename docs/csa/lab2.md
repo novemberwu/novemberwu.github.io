@@ -8,12 +8,17 @@ math: mathjax
 
 ---
 # Lab 2 Variables and Data Types
-
+{: .no_toc}
 ## Goals:
+{: .no_toc}
 * Able to write program with using variables and primitive types
-* Able to process double type with desired precision requirements
 
-## Task A: 
+## Task Summary
+{: .no_toc .text-delta }
+1. TOC
+{:toc}
+
+## Task A: Integers and Boolean
 
 Easy
 {: .label .label-green }
@@ -32,7 +37,7 @@ true
 false
 ```
 
-## Task B
+## Task B Operators 
 
 Easy
 {: .label .label-green }
@@ -56,21 +61,7 @@ true
 false
 ```
 
-## Task C
 
-Moderate
-{: .label .label-purple }
-
-Continuously compounded interest. Write a program that calculates and
-prints the amount of money you would have after t years if you invested P dollars
-at an annual interest rate r (compounded continuously).
-
-
-
-{: .note }
->The desired value is given by the formula $$E=Pe^{rt}$$ 
->
->You may need to use the Math lib in the calculation 
 
 
 
