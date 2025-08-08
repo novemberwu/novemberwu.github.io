@@ -15,22 +15,22 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 ![](../../assets/images/CS.png)
 ## 2025 Fall Pacing Guide
 
-| Topic                                               | Lecture              | Slides               | Lab/HW               |Duration|
-|:----------------------------------------------------|:---------------------|:---------------------|:---------------------|:---|
+| Topic                                               | Lecture              | Slides | Lab/HW               |Duration|
+|:----------------------------------------------------|:---------------------|:--|:---------------------|:---|
 | **Unit 1 Using Objects and Methods**                |||| 32 ~ 34 Class Period |
 | 1.1 Introduction                                    ||| [Lab 1]              ||
 | 1.2 Varialbe & Data Type                            ||| [Lab 2]              ||
-| 1.3 Expression and Output                           ||| [Lab 3]              ||
-| 1.4 Assignment and Input                            ||| [Lab 4]              ||
-| 1.5 Casting and Range of Variables                  ||| [Lab 5]              ||
-| 1.6 Compound Assignment Operator                    |||||
+| 1.3 Expression and Output                           |||                      ||
+| 1.4 Assignment and Input                            ||| [Lab 3]              ||
+| 1.5 Casting and Range of Variables                  ||| [Lab 4]              ||
+| 1.6 Compound Assignment Operator                    ||| [Lab 5]              ||
 | 1.7 Method Signature and Class Method               |||||
-| 1.8 Math Class and APIs                             |||||                               
+| 1.8 Math Class and APIs                             ||| [Lab 6]              ||                               
 | 1.9 API and Libraries                               |||||
-| 1.10 Objects                                        |||||
+| 1.10 Objects                                        ||| [Lab 7]              ||
 | 1.11 Objects Creation and Storage                   |||||
 | 1.12 Calling Instance Methods                       |||||
-| 1.13 String Manipulation                            |||||
+| 1.13 String Manipulation                            |||[Lab 8]||
 | 1.14 Documentation with Comments                    |||||
 | **Unit 2 Selection and Iteration**                  ||                      | | 29 ~ 31 Class Period |
 | 2.1 Algorithms with Selection and Repetition        |||||
@@ -98,6 +98,11 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 [Lab 3]: {% link docs/csa/lab3.md %}
 [Lab 4]: {% link docs/csa/lab4.md %}
 [Lab 5]: {% link docs/csa/lab5.md %}
+[Lab 6]: {% link docs/csa/lab6.md %}
+[Lab 7]: {% link docs/csa/lab7.md %}
+[Lab 8]: {% link docs/csa/lab8.md %}
+
+
 
 
 
