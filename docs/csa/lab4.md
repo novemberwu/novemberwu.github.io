@@ -6,10 +6,18 @@ layout: page
 
 ---
 # Lab 4 Type Casting and Variable Range
-
+{: .no_toc}
 ## Goals
+{: .no_toc}
+* Aware of the variable range and able to avoid overflow problem 
+* Able to write type casting 
 
-## Task A
+## Task Summary
+{: .no_toc .text-delta }
+1. TOC
+{:toc}
+
+## Task A Compare doubles
 
 Easy
 {: .label .label-green }
@@ -26,7 +34,7 @@ public static void main(String[] args){
 // the main function should print true
    
 ```
-## Task B
+## Task B Overflow
 
 Easy
 {: .label .label-green }
