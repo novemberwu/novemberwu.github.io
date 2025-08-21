@@ -1,25 +1,25 @@
 ---
-title: Lab 7
-nav_order: 7
-parent: Labs
+title: FX Rate Lab
+nav_order: 5
+parent: DS Labs
 layout: page
 
 ---
-# Lab 7 Method and Math
+# FX Rate Lab
 {: .no_toc }
 ## Goals:
 {: .no_toc }
 * Able to call static methods of Math API
 * Able to implement static method 
 * Aware of the mechanism of passing arguments to functions 
+* Able to use condition and loops to process data
 
 ## Task Summary 
 {: .no_toc .text-delta }
 1. TOC
 {:toc}
 
-{: .important }
-This lab requires some topics that are to be covered in later classes. The lab hint and note will help you.
+
 
 ## Task A: Read FX rate from a file
 Moderate
@@ -45,9 +45,7 @@ Sample output
 ```
 
 {: .note }
->You may need to use **loop** (to be covered in Unit2) to repeat reading until the end of the file.
->
->Please use the following code to archieve read line by line
+>Please use the following code to read line by line
 
 ```java
 // define the scanner to source the input from the file
@@ -94,6 +92,9 @@ public static Double getFxRate(String date){
 > * You may use String.trim to remove leading and trailing space to make your program tolerant to extra space from input
 > 
 > * You may use Double.parseDouble to parse text into double
+> 
+> 
+
 
 
 

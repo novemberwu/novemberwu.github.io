@@ -54,18 +54,6 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 | 2.6 Implementing String Algorithms                  |||||
 | 2.7 Nested Iteration                                |||||
 | 2.8 Informal Run-Time Analysis                      |||||
-
-
-### Fall Semester Evaluation
-
-| Class Participation | Lab/HW|Attendence |Midterm |Final Exam |
-|--:|-----:|------:|---:|---:|
-| 10%| 25%|10%|25%|30%|
-
-## 2025 Spring Pacing Guide
-
-| Topic                                        | Lecture          |Slides|Lab/HW|
-|:---------------------------------------------|:------------------|:------|:---|
 | **Unit 3 Class Creation**                    |||| 20 ~ 22 Class Period |
 | 3.1 Abstraction and Program Design           |||||
 | 3.2 Impact of Program Design                 |||||
@@ -76,7 +64,7 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 | 3.7 Class Variables and Methods              |||||
 | 3.8 Scope and Access                         |||||
 | 3.9 *this* Keyword                           |||||
-| **Unit 4 Data Collection**                   ||||50 ~ 52 Class Period|
+| **Unit 4 Data Collection (part1)**                   ||||30 ~ 32 Class Period|
 | 4.1 Ethical and Social Issues Around Data Collection |||||
 |4.2 Introduction to Using Data Sets |||||
 |4.3 Array Creation and Access |||||
@@ -87,13 +75,42 @@ AP Computer Science A (AP CSA) is an introductory college-level computer science
 |4.8 ArrayList Methods |||||
 |4.9 ArrayList Travelsals |||||
 |4.10 Implementing ArrayList Algorithms |||||
-|4.11 2D Array Creation and Access |||||
-|4.12 2D Array Traversals |||||
-|4.13 Implementing 2D Array Algorithms |||||
-|4.14 Searching Algorithms |||||
-|4.15 Sorting Algorithms |||||
-|4.16 Recursion |||||
-|4.17 Recursive Searching and Sorting |||||
+
+
+### Fall Semester Evaluation
+
+| Class Participation | Lab/HW|Attendence |Midterm |Final Exam |
+|--:|-----:|------:|---:|---:|
+| 10%| 25%|10%|25%|30%|
+
+## 2025 Spring Pacing Guide
+
+| Topic                                 | Lecture          |Slides|Lab/HW|
+|:--------------------------------------|:------------------|:------|:---|
+| **Unit 4 Data Collection (Part 2)**   ||||20 ~ 22 Class Period|
+| 4.11 2D Array Creation and Access     |||||
+| 4.12 2D Array Traversals              |||||
+| 4.13 Implementing 2D Array Algorithms |||||
+| 4.14 Searching Algorithms             |||||
+| 4.15 Sorting Algorithms               |||||
+| 4.16 Recursion                        |||||
+| 4.17 Recursive Searching and Sorting  |||||
+| **Review - Core Topic Deep Dive**     |||| 10 Class Period|
+| Data Structure & Algorithms           |||||
+| Recursion & Iteration                 |||||
+| OOP & Class Design                    |||||
+| **FRQ Mastery & MCQ Tactics**         |||| 15 Class Period|
+| FRQ Skill Builders                    |||||
+| MCQ Bootcamp                          |||||
+| **Full-Length Practice & Refinement** |||| 15 Class Period|
+| Mock Exams                            |||||
+| Targeted Review                       |||||
+| Final Prep & Mindset                  |||||
+| **Post-AP CSA Curriculum**            ||||15 Class Period|
+| Real-World Application                |||||
+| Computer Science & Career Exploration |||||
+| Coding Challenges                     |||||
+
 
 ### Spring Semester Evaluation
 
