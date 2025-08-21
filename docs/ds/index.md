@@ -27,8 +27,13 @@ CSA or Basic Java programming
 | 2 | **Java Programming Review** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)||
 |2.1 | Hello World | | [Lab 1] |
 |2.2 | Java Date Types | | [Lab 2] |
-|2.3 | API and Libraries || [Math Lab] [String Lab] |
+|2.3 | API and Libraries || * [Math Lab]  *[String Lab] |
 |2.4 | Conditions and Loops ||[FX Rate Lab]|
+|2.5| Arrays |||
+|2.6 | Input & Output |||
+|2.7 | Functions |||
+|2.8| OOP||* [FX Rate (OOP) Lab] * [FX Rate (Array) Lab]|
+
 | 3 | **Array and Linked Lists**      |   [slides](https://docs.google.com/presentation/d/1E8aPUs6PDzqtXbSZRMyLU_7T28Xt7-U-4QsoiDlq500/edit?usp=sharing) |
 | 4 | **Stack and Queues** |   |
 | 5 | **Elementory Sorts** <br>  - bubble sort <br> - selection sort <br> - insertion sort ||
@@ -88,3 +93,5 @@ CSA or Basic Java programming
 [Math Lab]: {% link docs/ds/mathLab.md %}
 [FX Rate Lab]: {% link docs/ds/fxRateLab.md %}
 [String Lab]: {% link docs/ds/stringLab.md %}
+[FX Rate (OOP) Lab]:{%link docs/ds/fxRateLab1.md%}
+[FX Rate (Array) Lab]: {% link docs/ds/fxRateLab2.md%}

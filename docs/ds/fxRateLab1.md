@@ -5,7 +5,7 @@ parent: DS Labs
 layout: page
 
 ---
-# FX Rate Lab
+# FX Rate OOP Lab
 {: .no_toc }
 ## Goals:
 {: .no_toc }
