@@ -34,7 +34,7 @@ CSA or Basic Java programming
 |2.7 | Functions |||1|
 |2.8| OOP||- [FX Rate (OOP) Lab] <br> - [FX Rate (Array) Lab]|2|
 | 3 | **Algorithm Fundamentals** |||**40**|
-| 3.1 | Array and Linked Lists      |   [slides](https://docs.google.com/presentation/d/1E8aPUs6PDzqtXbSZRMyLU_7T28Xt7-U-4QsoiDlq500/edit?usp=sharing) |10|
+| 3.1 | Array and Linked Lists      |   [slides](https://docs.google.com/presentation/d/1E8aPUs6PDzqtXbSZRMyLU_7T28Xt7-U-4QsoiDlq500/edit?usp=sharing)| |10|
 | 3.2 | Stack and Queues** | |  |10|
 | 3.3| Union Find Algorithm |||10|
 | 3.4| Algorithm Analysis |||10|
