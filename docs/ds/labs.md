@@ -1,11 +1,11 @@
 ---
-title: Labs
+title: DS Labs
 nav_order: 1
-parent: Computer Science A
+parent: Data Structure & Algorithm
 layout: page
 
 ---
-# (AP) Lab CSA
+# Data Structures & Algorithm
 ## Lab Guidance
 
 ### Hardness of assignment
@@ -21,5 +21,4 @@ Each assignment indicates how difficult it is
 ### Debugging tips
 * [Rubber duck debugging ](https://en.wikipedia.org/wiki/Rubber_duck_debugging)
 * [IDE debugging tools](https://youtu.be/V5iQ1FyRtBo?si=cKZyo1hTauWPBl9e)
-
 

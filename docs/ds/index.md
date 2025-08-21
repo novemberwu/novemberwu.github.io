@@ -25,6 +25,10 @@ CSA or Basic Java programming
 |:------|:------------------|:------|:--|
 | 1 | **Course Introduction** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)||
 | 2 | **Java Programming Review** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)||
+|2.1 | Hello World | | [Lab 1] |
+|2.2 | Java Date Types | | [Lab 2] |
+|2.3 | API and Libraries || [Math Lab] [String Lab] |
+|2.4 | Conditions and Loops ||[FX Rate Lab]|
 | 3 | **Array and Linked Lists**      |   [slides](https://docs.google.com/presentation/d/1E8aPUs6PDzqtXbSZRMyLU_7T28Xt7-U-4QsoiDlq500/edit?usp=sharing) |
 | 4 | **Stack and Queues** |   |
 | 5 | **Elementory Sorts** <br>  - bubble sort <br> - selection sort <br> - insertion sort ||
@@ -78,3 +82,9 @@ CSA or Basic Java programming
 
 ### Asymptotics
 * [Big-O CheatSheet](https://www.bigocheatsheet.com/)
+
+[Lab 1]: {% link docs/ds/lab1.md %}
+[Lab 2]: {% link docs/ds/lab2.md %}
+[Math Lab]: {% link docs/ds/mathLab.md %}
+[FX Rate Lab]: {% link docs/ds/fxRateLab.md %}
+[String Lab]: {% link docs/ds/stringLab.md %}
