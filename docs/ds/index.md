@@ -18,6 +18,10 @@ This course provides an introduction to modelling of computational problems. It 
 ## Prerequisites
 CSA or Basic Java programming
 
+## Primary Textbooks
+* Robert Sedgewick & Kevin Wayne, Algorithms (4th Edition)
+* Robert Sedgewick and Kevin Wayne, Computer Science: An Interdisciplinary Approach
+
 
 ## 2025 Fall Pacing Guide
 
@@ -80,15 +84,6 @@ CSA or Basic Java programming
 |--:|-----:|------:|---:|---:|--:|
 | 10%| 20%|10%|20%|20%|20%|
 
-
-
-
-
-## Primary Textbook 
-* Robert Sedgewick & Kevin Wayne, Algorithms (4th Edition) 
-* C.L.R.S, Introduction to Algorithms (4th Edition)
-* Bruce Eckel, On Java 8 
-* Robert Sedgewick and Kevin Wayne, Computer Science: An Interdisciplinary Approach
 
 ## Resources
 ### Java
