@@ -25,9 +25,11 @@ layout: page
 
 ### IDE and Java SDK setup
 * [Guide](https://introcs.cs.princeton.edu/java/code/)
-
 {: .note }
 JDK 11 is needed to compile and run the code.
+
+### Git (version control)
+* [Guide](https://git-scm.com/videos)
 
 ## Task A: Hello World 
 Easy
