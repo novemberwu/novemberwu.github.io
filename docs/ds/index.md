@@ -30,7 +30,8 @@ CSA or Basic programming
 |:------|:------------------|:------|:--|:---|
 | 0 | **Course Introduction** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)|| **1**|
 | 1 | **Java Programming Review** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)| |**10** |
-|1.1 | Hello World | | [Lab 1] |1|
+||Unit Summary: the unit reviews the Java programming basics, aiming to build students' confidence to language. After this unit, they will be comfortable to use it as a tool to learn data structure and algorithm| 
+1.1 | Hello World | | [Lab 1] |1|
 |1.2 | Java Data Types | | [Lab 2] |1|
 |1.3 | API and Libraries ||  - [Math Lab] <br> -  [String Lab] |1|
 |1.4 | Conditions and Loops ||[FX Rate Lab]|1|
