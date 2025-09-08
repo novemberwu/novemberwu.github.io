@@ -74,7 +74,7 @@ java FxRate 08/02/2025
 Sample output
 ```
 7.1826
-unknown
+null
 ```
 Your method signature should be 
 ```java
