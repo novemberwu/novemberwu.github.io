@@ -78,7 +78,7 @@ unknown
 ```
 Your method signature should be 
 ```java
-public static Double getFxRate(String date){
+public Double getFxRate(String date){
         // TASK B: your code is here
         return null; // if rate of a given date is not found, return null
 }
