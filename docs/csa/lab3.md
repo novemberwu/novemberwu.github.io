@@ -1,6 +1,6 @@
 ---
-title: Lab 3
-nav_order: 3
+title: Lab 2
+nav_order: 12
 parent: Labs
 layout: page
 
@@ -20,42 +20,44 @@ layout: page
 {:toc}
 
 
-## Task A: Arithmetic Expressions
+
+
+## Task A: Read from the StdIn
+
+Moderate
+{: .label .label-purple }
+
+Write a program that reads 2 String from StdIn, then print out them into standard output
+
+Sample input
+```
+java ScannerExample
+<user type> Good Day
+```
+
+
+Sample output
+```
+Good
+Day
+```
+
+## Task B: Arithmetic Expressions (Optional)
 
 Easy
 {: .label .label-green }
 
-Write a program that takes two integer command-line arguments x and y
+Write a program that takes two integer  arguments x and y from StdIn
 and prints the Euclidean distance from the point (x, y) to the origin (0, 0).
 
 Sample input
 ```
-java distance 30 40
+java distance 
+<user type> 30 40
 ```
 
 Sample output
 ```
 50
-```
-
-## Task B: Read from the file
-
-Moderate
-{: .label .label-purple }
-
-Write a program that reads 2 integers from a file, then print out the sum of them into standard output
-
-Sample input
-```
-java twoSum num.txt
-```
-Content of the num.txt file
-```
-88 90
-```
-
-Sample output
-```
-178
 ```
 
