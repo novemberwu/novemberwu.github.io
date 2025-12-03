@@ -1,5 +1,5 @@
 ---
-title: Lab 1 (G10)
+title: G10 Lab 1
 nav_order: 11
 parent: Labs
 layout: page

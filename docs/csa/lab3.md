@@ -1,5 +1,5 @@
 ---
-title: Lab 2
+title: G10 Lab Expression 
 nav_order: 12
 parent: Labs
 layout: page

@@ -26,37 +26,39 @@ CSA or Basic programming
 
 ## 2025 Fall Pacing Guide
 
-| Unit  | Lecture          |Slides|Lab/HW |Duration(cp) |
-|:------|:------------------|:------|:--|:---|
-| 0 | **Course Introduction** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)|| **1**|
-| 1 | **Java Programming Review** |[slides](https://docs.google.com/presentation/d/1WJy06JgcgIW_GE8xxQCNcxKQzSoScSQ2L5puhvTmM7E/edit?usp=sharing)| |**10** |
-||Unit Summary: the unit reviews the Java programming basics, aiming to build students' confidence to language. After this unit, they will be comfortable to use it as a tool to learn data structure and algorithm| 
-1.1 | Hello World | | [Lab 1] |1|
-|1.2 | Java Data Types | | [Lab 2] |1|
-|1.3 | API and Libraries ||  - [Math Lab] <br> -  [String Lab] |1|
-|1.4 | Conditions and Loops ||[FX Rate Lab]|1|
-|1.5| Arrays |||2|
-|1.6 | Input & Output |||1|
-|1.7 | Functions |||1|
-|1.8| OOP||- [FX Rate (OOP) Lab] <br> - [FX Rate (Array) Lab]|2|
-| 2 | **Algorithm Fundamentals** |||**40**|
-| 2.1 | Array and Linked Lists      |   [slides](https://docs.google.com/presentation/d/1E8aPUs6PDzqtXbSZRMyLU_7T28Xt7-U-4QsoiDlq500/edit?usp=sharing)| |10|
-| 2.2 | Stack and Queues** | |  |10|
-| 2.3| Union Find Algorithm |||10|
-| 2.4| Algorithm Analysis |||10|
-| 3| **Sorting**|||**40**|
-| 3.1 | Elementory Sorts <br>  - bubble sort <br> - selection sort <br> - insertion sort |||10 |
-| 3.2 | Quick Sort** |||5|
-| 3.3 | Merging and Merge Sort |||5|
-| 3.4 | Priority Queue |||5|
-| 3.5 | HeapSort|||5|
-| 3.6 | Sorting Application|||10|
+| Unit | Lecture                                                                          | Duration(cp) |
+|:-----|:---------------------------------------------------------------------------------|:-------------|
+| 0    | **Course Introduction**                                                          | **1 day**    |
+| 1    | **Java Programming Review**                                                      | **2 weeks**  |
+| 1.1  | Hello World                                                                      | 1            |
+| 1.2  | Java Data Types                                                                  | 1            |
+| 1.3  | API and Libraries                                                                | 1            |
+| 1.4  | Conditions and Loops                                                             | 1            |
+| 1.5  | Arrays                                                                           | 2            |
+| 1.6  | Input & Output                                                                   | 1            |
+| 1.7  | Functions                                                                        | 1            |
+| 1.8  | OOP                                                                              | 2            |
+| 2    | **Algorithm Fundamentals**                                                       | **6 weeks**  |
+| 2.1  | Linked Lists                                                                     | 10           |
+| 2.2  | Array and ArrayList                                                              | 5            |
+| 2.3  | Stack and Queues                                                                 | 10           |
+| 2.4  | Linear data structure applications                                               | 5            |
+| 3    | **Union-Find Algorithm**                                                         | **4 weeks**  |
+| 3.1  | Union Find Algorithm                                                             | 10           |
+| 3.2  | Algorithm Analysis                                                               | 10           |
+| 4    | **Sorting**                                                                      | **8 weeks**  |
+| 4.1  | Elementory Sorts <br>  - bubble sort <br> - selection sort <br> - insertion sort | 10           |
+| 4.2  | Quick Sort**                                                                     | 5            |
+| 4.3  | Merging and Merge Sort                                                           | 5            |
+| 4.4  | Priority Queue                                                                   | 5            |
+| 4.5  | HeapSort                                                                         | 5            |
+| 4.6  | Sorting Application                                                              | 10           |
 
 ### Fall Semester Evaluation
 
-| Class Participation | Lab/HW|Attendence |Midterm |Final Exam |
+| Class Participation | Lab/HW|Attendence |Quiz1|Midterm |Quiz2|Final Exam |
 |--:|-----:|------:|---:|---:|
-| 10%| 30%|10%|25%|25%|
+| 10%| 30%|5%|10%|15%|10%|20%|
 
 ## 2025 Spring
 

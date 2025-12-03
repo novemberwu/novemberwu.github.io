@@ -47,7 +47,7 @@ Sample output
 ```
 
 {: .note }
->Please use the following code to archieve read line by line
+>Please use the following code to  read line by line
 
 ```java
 // define the scanner to source the input from the file
@@ -61,34 +61,42 @@ Sample output
 ```
 
 
-## Task B: Print FX rates in reversed order
+## Task B: Calculate the average FX rate
 Moderate
 {: .label .label-purple }
-Since you already get the fx rates arrays, write a program to iterate the array backwards and print the fx rates out
-```java
-   for(int i = fxArray.length; i >=0; i--){
-   // TASK B: Your code here. if the slot empty, continue. else print out the fx rate element 
-   }
-
-```
+Since you already get the fx rates arrays, write a program to iterate the array and calculate the average fx rate
 
 {: .note }
 The order of the output is reversed order of original file
 
 Sample input
 ```
-java fxRateArrayReverse
+java fxRateAverage
 ```
 Sample output
 ```
-07/07/2025,7.1747
-07/08/2025,7.1741
-07/09/2025,7.1802
-07/10/2025,7.1749
-...
-08/06/2025,7.1826
-08/07/2025,7.1804
+7.1781625
 ```
+
+## Task C: Search FX rate of a given date
+
+Moderate
+{: .label .label-purple }
+Since you already get the fx rates arrays, write a program search the fx array for a given date, return null if not found
+
+{: .note }
+The order of the output is reversed order of original file
+
+Sample input
+```
+java fxRateSearch 08/06/2025
+```
+Sample output
+```
+08/06/2025,7.1826
+
+```
+
 
 
 [FX Rate Lab]: {% link docs/ds/fxRateLab.md %}
