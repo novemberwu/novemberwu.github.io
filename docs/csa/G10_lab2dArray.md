@@ -76,7 +76,7 @@ public class StudentCourses{
 
 ```
 Sample output
-```java
+```
 2
 ```
 
@@ -99,7 +99,7 @@ public class GradeCalc{
         grades[0] = new int[]{99, 98, 40, 88, 79, 90}; // grades from class one
         grades[1] = new int[]{66, 68, 77, 99, 100, 83}; // grades from class two
         grades[2] = new int[]{36, 68, 77, 99, 100, 83};
-        grades[2] = new int[]{96, 98, 77, 99, 10, 22, 66};
+        grades[3] = new int[]{96, 98, 77, 99, 10, 22, 66};
 
         gradeCalc(grades);
     }
