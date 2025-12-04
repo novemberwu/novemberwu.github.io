@@ -79,3 +79,30 @@ Sample output
 ```java
 2
 ```
+
+## Task C: Calculate average grade of each grade
+You are given a 2D array, each row stores the grades of all students in one class. 
+i.e. the first row stores all grades of students from class one.
+The second row stores grades of students from class two
+
+You write a program to calculate the average grade of each class, and print out the class number with 
+the highest average grade, and its average grade
+
+Sample code
+```java
+public class GradeCalc{
+    public static void gradeCalc(int[][] grades){
+        // print the class number, print the average grade of the class
+    }
+    public static void main(String[] args){
+        int[][] grades = new int[4][];
+        grades[0] = new int[]{99, 98, 40, 88, 79, 90}; // grades from class one
+        grades[1] = new int[]{66, 68, 77, 99, 100, 83}; // grades from class two
+        grades[2] = new int[]{36, 68, 77, 99, 100, 83};
+        grades[2] = new int[]{96, 98, 77, 99, 10, 22, 66};
+
+        gradeCalc(grades);
+    }
+}
+
+```
