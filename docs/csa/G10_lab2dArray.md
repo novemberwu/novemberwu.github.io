@@ -93,6 +93,24 @@ Sample code
 public class GradeCalc{
     public static void gradeCalc(int[][] grades){
         // print the class number, print the average grade of the class
+        // print the class number, print the average grade of the class
+        double maxAverage = -1;
+        int maxClass = -1;
+        for (int i = 0; i < grades.length; i++) {
+            double classSum = 0;
+            for (int j = 0; j < grades[i].length; j++) {
+                classSum += grades[i][j];
+            }
+            classSum /= grades[i].length;
+            System.out.printf("\nClass: %d  average grade %.2f", i, classSum);
+            if( classSum > maxAverage){
+                maxClass = i;
+                maxAverage = classSum;
+            }
+
+        }
+
+        System.out.printf("\n\n **** Class %d has highest average grade %.2f", maxClass, maxAverage);
     }
     public static void main(String[] args){
         int[][] grades = new int[4][];
@@ -105,4 +123,14 @@ public class GradeCalc{
     }
 }
 
+```
+
+Sample output
+```text
+Class: 0  average grade 82.33
+Class: 1  average grade 82.17
+Class: 2  average grade 77.17
+Class: 3  average grade 66.86
+
+ **** Class 0 has highest average grade 82.33
 ```
