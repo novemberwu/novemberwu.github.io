@@ -80,7 +80,7 @@ Sample output
 2
 ```
 
-## Task C: Calculate average grade of each grade
+## Task C: Calculate average grade of each class
 You are given a 2D array, each row stores the grades of all students in one class. 
 i.e. the first row stores all grades of students from class one.
 The second row stores grades of students from class two
