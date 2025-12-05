@@ -1,11 +1,11 @@
 ---
-title: Lab ArrayList
+title: Lab ArrayList Basic
 nav_order: 14
 parent: Labs
 layout: page
 
 ---
-# Lab 2D Array
+# Lab Array List
 {: .no_toc }
 ## Goals:
 {: .no_toc }
@@ -17,79 +17,43 @@ layout: page
 1. TOC
 {:toc}
 
-## Task Context
-We are building a library application. There are thousands of books in the library. Each book has a ISBN number , title and author information. 
+## Task A: Explore ArrayList Add and Size
 
-Now you are required to complete the following functions to manage books in the library
-* manage books information, so that users could look up books by its isbn number, author name and title.
-* user could borrow the book if it's available
+Easy
+{: .label .label-green }
 
-
-## Task A: Create Book Class
-
-Moderate
-{: .label .label-purple }
-Create your own book class to model the books in physical world
-* ISBN, title, author are the attributes of the book class.The above information are immutable. 
-* Create constructors
-* Create needed instance methods
-
-Sample code:
+* **TODO #1**: What is the size of ```numbers```
+* **TODO #2**: Adding ```System.out.println(numbers.size());``` into the main block then run program
 ```java
-
-public class Book{
-    private final String isbn;
-    // more attributes
+public class ListRunner {
+      public static void main(String[] args) {
     
-    // constructor
-    // getter method
-}
-
-
-```
-
-## Task B: Create Library Class 
-Moderate
-{: .label .label-purple }
-* Create library class that manages books, such as add new books to the collection, remove books from the collection
-* Provide search function to allow user to find books by author or by isbn
-* Provide borrow and return service to users. If a book is borrowed already, it won't be available until it's returned
-
-Sample code
-```java
-public class Library{
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
     
-    private final String libraryName = "My library";
-    
-   
-    public void addBook(Book aBook){
-        // your implementation here
-    }
-    public void removeBook(Book aBook){
-        // your implementation here
-    }
-    
-    public ArrayList<Book> searchBookByAuthor(String author){
-        // your implementation here
-    }
-    
-    public Book searchBookByISBN(String isbn){
-        // your implementation here
-    }
-    
-    public boolean borrowBook(Book book){
-        // your implementation here
-    }
-    
-    public boolean returnBook(Book book){
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(0, 30);
         
-    }
-    
-    public int collectionSize(){
-        // your implementation here
-    }
-    
+      }
 }
-
-
 ```
+
+*  **TODO #3**: What is the difference between the add() method with one parameter and the add() method with two parameters?
+*  **TODO #4**: After the last add() method, add the line System.out.println(numbers); then run the program
+What is printed? What can you conclude about both version of add()
+
+## Task B: Explore ArrayList Get/Set
+Easy
+{: .label .label-green }
+* **TODO #1** What is the first number of ```numbers```
+* **TODO #2** Adding ```System.out.println(numbers.get(0));``` into the main block then run program
+* **TODO #3** Adding ```System.out.println(numbers.get(3));``` into the main block then run program, what will happen?
+* **TODO #4** Adding ```numbers.set(0, 999);``` into the main block then run program. then print the arraylist
+
+## Task C: Explore ArrayList indexOf/ Contains
+
+Easy
+{: .label .label-green }
+* **TODO #1** What is the first number of ```numbers```
+* **TODO #2** Adding ```System.out.println(numbers.indexOf(20));``` into the main block then run program
+* **TODO #3** Adding ```System.out.println(numbers.contains(3));``` into the main block then run program, what will happen?
