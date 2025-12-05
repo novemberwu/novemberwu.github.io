@@ -10,7 +10,7 @@ layout: page
 ## Goals:
 {: .no_toc }
 * Able to use create and initialize ArrayList 
-* Able to use Array methods
+* Able to use ArrayList methods
 
 
 
