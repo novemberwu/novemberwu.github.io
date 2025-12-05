@@ -10,7 +10,11 @@ layout: page
 ## Goals:
 {: .no_toc }
 * Able to use create and initialize ArrayList 
-* Able to implement ArrayList algorithms
+* Able to use Array methods
+
+
+
+* ![](../../assets/images/ArrayListCheat.png)
 
 ## Task Summary
 {: .no_toc .text-delta }
@@ -57,3 +61,5 @@ Easy
 * **TODO #1** What is the first number of ```numbers```
 * **TODO #2** Adding ```System.out.println(numbers.indexOf(20));``` into the main block then run program
 * **TODO #3** Adding ```System.out.println(numbers.contains(3));``` into the main block then run program, what will happen?
+
+
