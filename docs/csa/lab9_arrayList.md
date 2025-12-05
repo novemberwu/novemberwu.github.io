@@ -21,7 +21,7 @@ layout: page
 1. TOC
 {:toc}
 
-## Task A: Explore ArrayList Add and Size
+## Task A: Explore ArrayList Add , Remove and Size
 
 Easy
 {: .label .label-green }
@@ -45,6 +45,7 @@ public class ListRunner {
 *  **TODO #3**: What is the difference between the add() method with one parameter and the add() method with two parameters?
 *  **TODO #4**: After the last add() method, add the line System.out.println(numbers); then run the program
 What is printed? What can you conclude about both version of add()
+*  **TODO #5**: Add ```numbers.remove(0)``` then run the program. 
 
 ## Task B: Explore ArrayList Get/Set
 Easy
@@ -111,7 +112,7 @@ public class StudentRunner {
 
 ```
 
-* **TODO 2** adding equals and hashCode  methods to Student class, run StudentRunner again and describe what happened
+* **TODO #2** adding equals and hashCode  methods to Student class, run StudentRunner again and describe what happened
 
 ```java
 
