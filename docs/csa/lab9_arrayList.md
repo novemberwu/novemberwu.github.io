@@ -9,7 +9,7 @@ layout: page
 {: .no_toc }
 ## Goals:
 {: .no_toc }
-* Able to use create and initialize ArrayList 
+* Able to create and initialize ArrayList 
 * Able to use ArrayList methods
 
 
@@ -43,7 +43,7 @@ public class ListRunner {
 ```
 
 *  **TODO #3**: What is the difference between the add() method with one parameter and the add() method with two parameters?
-*  **TODO #4**: After the last add() method, add the line System.out.println(numbers); then run the program
+*  **TODO #4**: After the last add() method, add the line ```System.out.println(numbers)```; then run the program
 What is printed? What can you conclude about both version of add()
 *  **TODO #5**: Add ```numbers.remove(0)``` then run the program. 
 
