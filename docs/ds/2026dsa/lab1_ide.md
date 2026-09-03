@@ -85,3 +85,62 @@ Process finished with exit code 0
 {: .note }
 You may need to specify your java class path in order to compile the code
 
+
+## Example B: Using Argument
+
+Easy
+{: .label .label-green }
+
+You can pass inputs to your program from the command line using **command-line arguments**. In Java, these arguments are captured in the `String[] args` array in the `main` method. The first argument is stored in `args[0]`.
+
+Here is the code for `UseArgument.java`:
+
+```java
+public class UseArgument {
+    public static void main(String[] args) {
+        System.out.print("Hi, ");
+        System.out.print(args[0]);
+        System.out.println(". How are you?");
+    }
+}
+```
+
+### Sample Input
+```bash
+java UseArgument Rachel
+```
+
+### Sample Output
+``` 
+Hi, Rachel. How are you?
+
+Process finished with exit code 0
+```
+
+{: .note }
+You may need to install the IntelliJ LIFT plugin to run arguments efficiently inside your IDE.
+
+---
+
+## Task B: Reverse Three Arguments
+
+Easy
+{: .label .label-green }
+
+Write a program `ThreeArguments` that takes **three** command-line arguments and prints a greeting with the arguments in **reverse order**. 
+
+If you pass three names, say `Alice`, `Bob`, and `Carol`, the program should print a friendly message with the names listed as `Carol`, `Bob`, and `Alice`.
+
+{: .note }
+Since Java arrays are zero-indexed, the three arguments will be stored in `args[0]`, `args[1]`, and `args[2]`.
+
+### Sample Input
+```bash
+java ThreeArguments Alice Bob Carol
+```
+
+### Sample Output
+```
+Hi, Carol, Bob, and Alice.
+```
+
