@@ -1,5 +1,5 @@
 ---
-title: Lab 2
+title: Lab 2 Primitive Data Type
 nav_order: 2
 parent: 2026 DSA
 layout: page

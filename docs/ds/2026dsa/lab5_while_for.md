@@ -1,5 +1,5 @@
 ---
-title: Lab 5
+title: Lab 5 Loops
 nav_order: 2
 parent: 2026 DSA
 layout: page
