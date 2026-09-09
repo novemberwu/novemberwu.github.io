@@ -1,5 +1,5 @@
 ---
-title: Lab 6
+title: Lab 6 Array
 nav_order: 2
 parent: 2026 DSA
 layout: page

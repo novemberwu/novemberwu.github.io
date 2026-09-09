@@ -1,5 +1,5 @@
 ---
-title: Lab 4
+title: Lab 4 Conditions
 nav_order: 2
 parent: 2026 DSA
 layout: page

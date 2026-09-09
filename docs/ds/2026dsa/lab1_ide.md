@@ -1,5 +1,5 @@
 ---
-title: Lab 1
+title: Lab 1 IDE
 layout: page
 nav_order: 2
 parent: 2026 DSA
