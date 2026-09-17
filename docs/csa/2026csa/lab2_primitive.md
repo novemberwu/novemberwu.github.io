@@ -223,3 +223,39 @@ Which of these expressions evaluate to `true`?
 4. `5 <= 5`
 
 *(Answers: 1, 2, and 4 are `true`; 3 is `false`!)*
+
+---
+
+## AP CSA Primitive Data Types Cheatsheet
+
+Here is your quick-reference summary of the primitive types and operators tested on the AP Computer Science A exam.
+
+### The Three Core Primitive Types
+* **`int`**: Represents whole numbers with no decimal points (e.g., `42`, `-7`). Arithmetic on integers is exact.
+* **`double`**: Represents decimal (floating-point) numbers (e.g., `3.14`, `-0.01`). 
+* **`boolean`**: Represents logic values and can only be `true` or `false`.
+
+### Key Arithmetic Operators
+* **Integer Division (`/`)**: Dividing two integers truncates (chops off) the decimal part completely. It **never** rounds.
+  * `7 / 3` is `2`
+  * `1 / 2` is `0`
+* **Modulo (`%`)**: Returns the remainder after integer division.
+  * `7 % 3` is `1` (since 3 goes into 7 twice, with a remainder of 1)
+  * `10 % 10` is `0`
+* **Comparison Operators**: Return a `boolean` value (`true` or `false`). Includes `==`, `!=`, `<`, `>`, `<=`, `>=`.
+
+### The Double Trap & Safe Comparison
+* Decimal math in computers is **imprecise** due to binary representation limits (e.g., `0.1 + 0.2` might equal `0.30000000000000004`).
+* **Never** use `==` to compare two double values directly.
+* **The Safe Comparison Formula**:
+  $$\text{Math.abs}(d_1 - d_2) < \epsilon$$
+  where $\epsilon$ (epsilon) is a tiny tolerance value (typically `0.00001`).
+
+---
+
+## Wrap-Up: Master of the Primitives
+
+By completing this lab, you have avoided two of the most common pitfalls for AP CSA students:
+* You know that integer division drops the remainder, and modulo retrieves it.
+* You know how to safely handle decimal rounding errors using absolute difference.
+

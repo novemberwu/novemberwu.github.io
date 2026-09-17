@@ -219,3 +219,30 @@ public class ScopeDetective {
 Bonus applied!
 Total points: 15
 ```
+
+---
+
+## AP CSA Variables and Scope Cheatsheet
+
+Here is your quick-reference summary of variables and scope rules tested on the AP Computer Science A exam.
+
+### Core Variable Concept
+* **Declaration**: Introduces the variable by specifying its type and name (e.g., `int score;`). This reserves space in memory.
+* **Initialization**: The first time a value is assigned to a variable (e.g., `int score = 0;`).
+* **Reassignment / Value Overwriting**: Assigning a new value overwrites the old one. A variable holds **exactly one value** at a time.
+* **The `=` Operator**: Not algebraic equals! Evaluates the expression on the right-hand side first, then stores the result in the variable on the left-hand side.
+
+### Key Scope Rules
+* **Definition of Scope**: The region of code where a variable is "alive" and accessible.
+* **Curly Braces `{ }` block rule**: A variable is scoped to the block in which it is declared. It is created on the line of declaration and destroyed at the closing curly brace `}` of its containing block.
+* **Local Variables**: Variables declared inside a method (like `main`) are local to that method and cannot be accessed outside it.
+* **Compiler Error**: Attempting to use a variable outside its scope results in a `"cannot find symbol"` compiler error.
+
+---
+
+## Wrap-Up: Building a Solid Mental Model of Memory and Scope
+
+By completing this lab, you have established foundational habits for AP CSA:
+* You visualize variables as unique named memory containers that only change when explicitly assigned using `=`.
+* You understand that curly braces `{ }` define boundaries for where variables exist, helping you prevent scope conflicts and pointer errors.
+
