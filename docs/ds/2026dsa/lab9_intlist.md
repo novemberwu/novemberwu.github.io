@@ -321,10 +321,7 @@ public class ExtraIntListPractice {
      */
     public static IntList incrList(IntList L, int x) {
         // TODO: Implement recursively using 'new'
-        if (L == null) {
-            return null;
-        }
-        return new IntList(L.first + x, incrList(L.rest, x));
+        return null;
     }
 
     /** 
@@ -333,12 +330,7 @@ public class ExtraIntListPractice {
      */
     public static IntList dincrList(IntList L, int x) {
         // TODO: Implement iteratively or recursively (NO 'new' keyword)
-        IntList p = L;
-        while (p != null) {
-            p.first += x;
-            p = p.rest;
-        }
-        return L;
+        return null;
     }
 
     // Helper method to print IntList structures visually
