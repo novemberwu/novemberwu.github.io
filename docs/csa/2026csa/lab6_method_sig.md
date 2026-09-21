@@ -16,6 +16,7 @@ math: mathjax
 * Learn the strict Java rules for what constitutes a method signature (crucial for the AP CSA Exam!).
 * Call built-in **class (static) methods** from Java libraries, particularly the `Math` class.
 * Distinguish between **void methods** (no return value) and **non-void methods** (which return a value that can be captured in a variable or expression).
+* Understand how primitive arguments are **passed by value** in Java and track variable state changes across method boundaries (Slides 21, 22).
 
 ## Task Summary
 {: .no_toc .text-delta }
@@ -110,16 +111,8 @@ Test your understanding of method signatures by answering the following **True o
 4. **True or False:** Two methods with signatures `doMath(double, int)` and `doMath(int, double)` have different signatures and can co-exist in the same class (this is called *overloading*).
 5. **True or False:** Changing a method from `public static` to `private` changes its method signature, meaning you can now declare another method with the same name and parameters in that same class.
 
-### Task A Solutions:
-Write out your answers inside a multi-line comment block in a new file named `SignatureCheck.txt` or as a comment header in your upcoming code.
-
-```
-Question 1: FALSE (Return types are not part of the method signature in Java; duplicate signatures cause a compile error regardless of return types).
-Question 2: TRUE (The method signature in Java consists strictly of the method name and the types/order of parameters).
-Question 3: FALSE (Parameter names are only used locally inside the method body. Only parameter types, count, and order determine the signature).
-Question 4: TRUE (Since the types of the parameters are in a different order, their signatures are different, allowing valid method overloading).
-Question 5: FALSE (Access modifiers like public/private and static/non-static modifiers are not part of the method signature).
-```
+### Task A Submission:
+Write out your answers (TRUE or FALSE) inside a multi-line comment block in a new file named `SignatureCheck.txt` or as a comment header in your upcoming code. Verify your logic using the rules in Part 2.
 
 ---
 
@@ -183,105 +176,86 @@ Square root of 25 is: 5.0
 
 ---
 
-## Task B: Student Action - Quadratic Root Solver (Slide 17, 18)
+## Part 4: Method Arguments - Pass by Value (Slides 21, 22)
+
+In Java, all method arguments are **passed by value**. This is a foundational concept that is heavily tested on the AP CSA exam.
+
+### What Does "Pass by Value" Mean?
+* When you pass a primitive data type (like `int`, `double`, `boolean`, `char`, etc.) to a method, Java **copies** the actual value of the variable.
+* This copied value is stored in a brand-new, local parameter variable inside the method's own stack frame (Slide 27).
+* Any modifications made to that parameter variable inside the method **only** affect the local copy.
+* The original variable in the caller's scope (such as inside the `main` method) is completely untouched!
+
+---
+
+## Example C: Primitive Pass-by-Value Demonstration
 
 Medium
 {: .label .label-yellow }
 
-Now, let's apply our knowledge of calling `Math` methods to solve an algebraic problem: finding the roots of a quadratic equation.
+Let's study a complete program that illustrates how primitive copies are modified within a method without altering the original caller's variables.
 
-From algebra, any quadratic equation of the form $$x^2 + bx + c = 0$$ (assuming coefficient $$a = 1$$) has two roots:
-$$x_1 = \frac{-b + \sqrt{b^2 - 4c}}{2}$$
+```java
+public class PassByValueDemo {
+    public static void main(String[] args) {
+        int num = 10;
+        System.out.println("Before call (main): num = " + num);
+        
+        // Pass num's value (10) as an argument
+        changeNumber(num);
+        
+        System.out.println("After call (main): num = " + num);
+    }
 
-$$x_2 = \frac{-b - \sqrt{b^2 - 4c}}{2}$$
-
-Write a Java program that calculates and prints these two roots by calling `Math.pow()` and `Math.sqrt()`.
-
-### Instructions:
-1. Create a file named `QuadraticRoots.java`.
-2. Inside the `main` method, declare and initialize two `double` variables:
-   * `double b = 6.0;`
-   * `double c = 5.0;`
-3. Calculate the two roots $$x_1$$ and $$x_2$$ using the formulas above.
-   * To calculate the discriminant ($$b^2 - 4c$$), call `Math.pow(b, 2) - 4 * c`.
-   * To calculate the square root of the discriminant, call `Math.sqrt(...)` passing in your computed discriminant.
-4. Print both roots to the console.
+    public static void changeNumber(int x) {
+        System.out.println("Inside method (start): x = " + x);
+        x = 99; // Modifies the local copy 'x'
+        System.out.println("Inside method (end): x = " + x);
+    }
+}
+```
 
 ### Expected Output:
 ```
-Equation: x^2 + 6.0x + 5.0 = 0
-Root 1 (x1): -1.0
-Root 2 (x2): -5.0
+Before call (main): num = 10
+Inside method (start): x = 10
+Inside method (end): x = 99
+After call (main): num = 10
 ```
 
 ---
 
-## Task C: General Quadratic Formula (With Coefficient $$a$$)
+## Task B: Pass-by-Value Variable Tracer
 
-Hard
-{: .label .label-red }
+Medium
+{: .label .label-yellow }
 
-Let's extend our root solver to handle the full, general quadratic equation:
-$$ax^2 + bx + c = 0$$
-
-The complete quadratic formula is:
-$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
-
-In this task, we must handle a crucial edge case: **imaginary roots**. If the discriminant ($$b^2 - 4ac$$) is negative, calling `Math.sqrt()` will return `NaN` (Not a Number). We must use a selection statement (`if-else`) to protect our program from this state!
+Copy/Paste Java program `ValueTracer.java` and predict what will be printed out
 
 ### Instructions:
-1. Open your `QuadraticRoots.java` file or create a new file named `GeneralQuadratic.java`.
-2. Inside `main`, initialize three double coefficients:
-   * `double a = 1.0;`
-   * `double b = -5.0;`
-   * `double c = 6.0;`
-3. Calculate the discriminant: $$discriminant = b^2 - 4ac$$.
-4. Implement a conditional check:
-   * **If the discriminant is negative** ($$< 0$$), print: `"The equation has no real roots."`
-   * **Otherwise**, calculate the two real roots $$x_1$$ and $$x_2$$ using the full formula and print them:
-     $$x_1 = \frac{-b + \sqrt{discriminant}}{2a}$$
-     $$x_2 = \frac{-b - \sqrt{discriminant}}{2a}$$
-5. Test your program with two scenarios:
-   * **Scenario 1 (Real Roots):** `a = 1.0`, `b = -5.0`, `c = 6.0`
-   * **Scenario 2 (No Real Roots):** `a = 2.0`, `b = 1.0`, `c = 3.0`
+1. Create a file named `ValueTracer.java`.
+2. Inside `main`, initialize a variable `double speed = 50.0;`.
+3. Call a static void method named `accelerate` passing in `speed` as an argument.
+4. Inside `accelerate`, modify the parameter by adding `20.0` to it.
+5. Back in `main`, print the value of `speed` to verify that it is still `50.0`.
 
-### Expected Output:
-
-**Scenario 1:**
-```
-Coefficients: a=1.0, b=-5.0, c=6.0
-Root 1 (x1): 3.0
-Root 2 (x2): 2.0
-```
-
-**Scenario 2:**
-```
-Coefficients: a=2.0, b=1.0, c=3.0
-The equation has no real roots.
-```
-
-### Code Skeleton:
+### Source code:
 ```java
-public class GeneralQuadratic {
+public class ValueTracer {
     public static void main(String[] args) {
-        // Coefficients
-        double a = 1.0;
-        double b = -5.0;
-        double c = 6.0;
-
-        // TODO 1: Calculate the discriminant (b^2 - 4ac)
-        double discriminant = 0.0; // Replace with code
-
-        System.out.println("Coefficients: a=" + a + ", b=" + b + ", c=" + c);
-
-        // TODO 2: Use if-else to check for negative discriminant
-        if (discriminant < 0) {
-            // Print message
-        } else {
-            // Calculate and print Root 1 and Root 2
-        }
+        double speed = 50.0;
+        accelerate(speed);
+        System.out.println("Speed: " + speed);
+    }
+    public static void accelerate(double s) {
+        s += 20.0;
     }
 }
+```
+
+### Predict Output:
+```
+Speed: ?
 ```
 
 ---
@@ -290,6 +264,6 @@ public class GeneralQuadratic {
 
 By completing this lab, you have learned:
 1. **Methods as abstractions:** Methods wrap executable blocks under a name, reducing repetition and dividing complex code.
-2. **The Signature Mandate:** Java uniquely identifies methods via their **Name and Parameter List**. The return type and access modifiers do **not** affect the method's signature.
-3. **Static Call Syntax:** Static methods belong to the class itself and are invoked as `ClassName.methodName(arguments)`.
-4. **Guarding against Math errors:** Checking inputs (like checking if the discriminant is negative before calling `Math.sqrt()`) is a fundamental practice to avoid invalid operations such as generating `NaN`.
+2. **The Signature Mandate:** Java uniquely identifies methods via their **Name and Parameter List** (types, count, and order). The return type and access modifiers do **not** affect the method's signature.
+3. **Static Call Syntax:** Static (class) methods belong to the class itself (such as methods in the `Math` library) and are invoked as `ClassName.methodName(arguments)` without needing object instantiation.
+4. **Pass by Value Concept:** Primitives are always passed as copies in Java, meaning their modifications inside a method never alter their original state in the caller's scope.
