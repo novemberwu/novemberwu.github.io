@@ -218,20 +218,21 @@ public class DiceRoller {
 
 ---
 
-## Task B: Custom Range Random Decimal Generator (Slide 16)
+## Task B: Custom Range Random Decimal Generator 
 
 Medium
 {: .label .label-yellow }
 
-Implement the code exercise from Slide 16! Write a complete program `CustomRandom.java` that takes a start and an end value, and produces a random floating-point number in the range `[start, end)` in **under 10 lines of code**.
+Write a complete program `CustomRandom.java` that takes a start and an end value, and produces a random floating-point number in the range `[start, end)` in **under 10 lines of code**.
 
 ### Code Skeleton:
 ```java
 public class CustomRandom {
     public static void main(String[] args) {
-        double start = 12.5, end = 18.2;
-        // TODO: Generate a random double in the range [start, end)
-        double rand = 0.0; // Replace with formula
+        int start = 12;
+        int end = 18;
+        // TODO: Generate a random int in the range [start, end)
+        int rand = 0.0; // Replace with formula
         System.out.println("Random: " + rand);
     }
 }
@@ -239,7 +240,7 @@ public class CustomRandom {
 
 ### Expected Output (individual number will vary):
 ```
-Random: 15.340291045
+Random: 15
 ```
 
 ---
