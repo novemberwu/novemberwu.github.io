@@ -218,7 +218,7 @@ public class DiceRoller {
 
 ---
 
-## Task B: Custom Range Random Decimal Generator 
+## Task B: Custom Range Random Integer Generator 
 
 Medium
 {: .label .label-yellow }
@@ -231,7 +231,7 @@ public class CustomRandom {
     public static void main(String[] args) {
         int start = 12;
         int end = 18;
-        // TODO: Generate a random int in the range [start, end)
+        // TODO: Generate a random int in the range [start, end]
         int rand = 0.0; // Replace with formula
         System.out.println("Random: " + rand);
     }
