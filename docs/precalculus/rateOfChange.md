@@ -1,7 +1,7 @@
 ---
 title: Rate of Change and Concavity
 nav_order: 1
-parent: Pre-AP Algebra
+parent: Pre-Calculus
 layout: page
 
 ---
