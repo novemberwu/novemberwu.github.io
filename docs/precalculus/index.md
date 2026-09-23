@@ -1,5 +1,5 @@
 ---
-title: Pre-AP Algebra
+title: Pre-Calculus
 layout: page
 nav_order: 5
 ---
