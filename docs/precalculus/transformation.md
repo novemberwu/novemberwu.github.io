@@ -1,7 +1,7 @@
 ---
 title: Graphing Transformations Lab
 nav_order: 2
-parent: Pre-AP Algebra
+parent: Pre-Calculus
 layout: page
 ---
 
