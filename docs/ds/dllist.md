@@ -293,7 +293,7 @@ public class DLListTest {
         assertEquals("getLast() should be 300", Integer.valueOf(300), list.getLast());
     }
 
-    public static void testIndexGet() {
+    public static void testGetIndex() {
         System.out.println("- Testing get(int i) and Boundary Checks:");
         DLList<Integer> list = new DLList<>();
         for (int i = 0; i < 5; i++) {
