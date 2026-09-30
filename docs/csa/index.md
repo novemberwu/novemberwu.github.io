@@ -1,7 +1,7 @@
 ---
 title: Computer Science A
 layout: page
-nav_order: 2
+nav_order: 1
 
 ---
 
