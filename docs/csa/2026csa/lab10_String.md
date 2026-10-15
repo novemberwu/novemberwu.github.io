@@ -122,6 +122,77 @@ Word 2: Programming
 
 ---
 
+## Task B: Email Address Parser
+
+Medium
+{: .label .label-yellow }
+
+Now let's practice parsing more complex structured text using `indexOf` and `substring`. Given an email address:
+
+```java
+String email = "rachel.wu @hotmail.com";
+```
+
+Decompose the email step by step:
+1. Find and print the index of the `'@'` character.
+2. Extract the **username** (the part before `'@'`).
+3. Extract the **domain** (the part after `'@'`).
+4. If the username follows the `<first name>.<last name>` format (e.g., `"rachel.wu"`), locate the `.` and extract the **first name** and **last name** respectively.
+
+### Instructions:
+1. Create a class named `Main` (in `Main.java`) or `EmailParser`.
+2. Locate the `@` symbol using `email.indexOf('@')` and print the resulting index.
+3. Extract the `username` from index `0` up to `index` using `substring`.
+4. Extract the `domain` starting from `index + 1` to the end of the string.
+5. In `username`, find the dot using `username.indexOf('.')`.
+6. Extract `firstName` (from `0` to `dotIndex`) and `lastName` (from `dotIndex + 1`).
+7. Print all extracted values to the console.
+
+> **Note on Whitespace:**
+> * If `email = "rachel.wu@hotmail.com"` (without a space), `indexOf('@')` is `9`.
+> * If `email = "rachel.wu @hotmail.com"` (with a space before `@`), `indexOf('@')` is `10`, and the extracted username will be `"rachel.wu "`. Either input is great for practicing how indices and boundary limits work!
+
+### Code Skeleton:
+```java
+public class Main {
+    public static void main(String[] args) {
+        String email = "rachel.wu @hotmail.com";
+
+        int index = email.indexOf('@');
+
+        System.out.println(index);
+
+        // TODO 1: get the username from email address
+
+        // TODO 2: get the domain from email address
+
+        // TODO 3: if username follows the <first name>.<last name>,
+        // get the first name and last name respectively
+    }
+}
+```
+
+### Expected Output:
+*(Using `"rachel.wu@hotmail.com"`)*
+```
+9
+Username: rachel.wu
+Domain: hotmail.com
+First name: rachel
+Last name: wu
+```
+
+*(Or if using `"rachel.wu @hotmail.com"`)*
+```
+10
+Username: rachel.wu 
+Domain: hotmail.com
+First name: rachel
+Last name: wu 
+```
+
+---
+
 ## Part 3: String Immutability (Slide 12)
 
 Strings are **immutable**—their contents can **never be changed** once created. Any string method that seems to modify text actually creates and returns a brand-new `String` object.
@@ -184,7 +255,7 @@ model: Model Y
 
 ---
 
-## Task B (Optional): Simple Palindrome Checker
+## Task C (Optional): Simple Palindrome Checker
 
 Optional
 {: .label .label-purple }

@@ -18,6 +18,11 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 # math
 math: mathjax
 
+# mermaid
+mermaid:
+  version: "10.9.1"
+
+
 
 # callout configuration
 callouts_level: quiet # or loud
