@@ -12,6 +12,55 @@ math: mathjax
 Companion slides: **Session 4**. Materials: `ch3_1/Stopwatch.java`, `ch3_1/StopwatchClient.java`, `ch3_1/ProductReview.java`.
 Related reading: [Lab 9 Part 2](lab9_creatingClass.html).
 
+## Reference: `ch3_1/ProductReview.java`
+
+<details markdown="block">
+<summary>Full source, exactly as in the repo — click to expand</summary>
+
+```java
+package ch3_1;
+
+public class ProductReview {
+    private final int rating;
+    private String text;
+    private final String authorId;
+    private final String productId;
+    private  String[] images;
+
+    public int getRating(){
+        return this.rating;
+    }
+
+    public void setText(String t){
+        this.text = t;
+
+    }
+
+    public String getText(){
+        return this.text;
+    }
+
+    private final static int IMAGE_SIZE = 10;
+
+    public ProductReview(int rating, String authorId, String pid){
+        this.rating = rating;
+        this.authorId = authorId;
+        this.productId = pid;
+
+    }
+
+    public ProductReview(){
+        this.rating = 5;
+        this.authorId = "anonumous";
+        this.productId = "default value";
+    }
+
+
+}
+```
+
+</details>
+
 ## Task Summary
 {: .no_toc .text-delta }
 1. TOC
