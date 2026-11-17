@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AP CSA Unit 3 - Class Creation</title>
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#e8e8e8;overflow:hidden;font-family:Arial,Helvetica,sans-serif;}
+  #stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:center center;background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.35);}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;padding:52px 84px 70px;color:#000;}
+  .slide.active{display:flex;}
+  h1{font-size:40px;font-weight:700;margin:0 0 8px;color:#007FA3;}
+  h1 .cont{font-size:24px;font-weight:400;color:#007FA3;margin-left:10px;}
+  h2{font-size:36px;font-weight:700;margin:0 0 20px;color:#007FA3;}
+  h2 .cont{font-size:22px;font-weight:400;color:#007FA3;margin-left:10px;}
+  .sub{font-size:20px;color:#444;margin:0 0 20px;}
+  ul{font-size:27px;line-height:1.5;margin:6px 0 0;padding-left:36px;}
+  li{margin-bottom:12px;}
+  .small{font-size:23px;}
+  b,strong{font-weight:700;}
+  .lbl{font-weight:700;}
+  pre{background:#F5F5F5;border-radius:8px;padding:18px 26px;font-family:"Menlo",Consolas,monospace;font-size:22px;line-height:1.5;margin:14px 0;overflow:hidden;color:#000;}
+  pre.small{font-size:19px;line-height:1.45;padding:14px 22px;}
+  code{font-family:Menlo,Consolas,monospace;font-size:.92em;background:#F5F5F5;border-radius:4px;padding:1px 6px;}
+  pre code{background:none;padding:0;}
+  .kw{color:#007FA3;font-weight:700;}
+  .str{color:#CC730D;}
+  .cmt{color:#7F7F7F;font-style:italic;}
+  .cols{display:flex;gap:44px;align-items:flex-start;flex:1;min-height:0;}
+  .col{flex:1;min-width:0;}
+  .fig{border:1.5px solid #000;padding:16px 24px;font-size:23px;line-height:1.5;}
+  .fig .t{font-weight:700;text-decoration:underline;margin-bottom:8px;}
+  .figline{font-size:23px;line-height:1.7;margin-top:12px;}
+  .arrow{font-size:30px;color:#000;align-self:center;}
+  .divider{justify-content:flex-start;padding-top:150px;}
+  .divider .num{font-size:24px;letter-spacing:4px;color:#007FA3;font-weight:700;margin-bottom:16px;}
+  .divider h1{font-size:52px;}
+  .divider .desc{font-size:26px;color:#000;margin-top:20px;}
+  .practice-title{color:#007FA3;font-weight:700;font-size:38px;margin-bottom:6px;}
+  .link{color:#007FA3;font-size:24px;text-decoration:underline;margin-top:26px;display:inline-block;}
+  .footer{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:16px;color:#555;}
+  #counter{position:absolute;bottom:16px;right:30px;font-size:16px;color:#555;z-index:10;}
+  #bar{position:absolute;top:0;left:0;height:4px;background:#007FA3;width:0;z-index:10;transition:width .2s;}
+  .nav{position:absolute;bottom:12px;right:120px;z-index:10;display:flex;gap:8px;}
+  .nav button{font-size:18px;padding:5px 14px;border-radius:6px;border:1px solid #999;background:#fff;color:#333;cursor:pointer;}
+  .nav button:hover{background:#eef7fa;}
+  .center{align-items:center;text-align:center;justify-content:center;}
+  @media print{
+    html,body{overflow:visible;background:#fff;}
+    #stage{position:static;transform:none!important;box-shadow:none;width:1280px;height:auto;}
+    .slide{display:flex;position:relative;page-break-after:always;width:1280px;height:720px;box-sizing:border-box;}
+    #counter,#bar,.nav{display:none;}
+  }
+</style>
+</head>
+<body>
+<div id="stage"><div id="bar"></div>
+
+<!-- 1 TITLE -->
+<section class="slide center">
+  <h1 style="font-size:56px;">AP Computer Science A</h1>
+  <h2 style="font-size:40px;margin-top:12px;">Unit 3 &mdash; Class Creation</h2>
+  <p class="sub" style="font-size:24px;margin-top:10px;">Code: <code>github.com/novemberwu/csa</code> (<code>ch3_1</code>) &middot; labs: <code>unit3_lab1</code> &hellip; <code>unit3_lab4</code></p>
+  <p class="sub">Press <code>&rarr;</code> / <code>&larr;</code> or <code>Space</code> to navigate. <code>P</code> toggles print view.</p>
+</section>
+
+<!-- 2 COURSE MAP -->
+<section class="slide">
+  <h2>Course map</h2>
+  <ul style="font-size:29px;">
+    <li><b>1. Instance Variables</b> &mdash; what state does an object hold?</li>
+    <li><b>2. Encapsulation</b> &mdash; protecting that state (public / private)</li>
+    <li><b>3. Constructors</b> &mdash; how objects are created and initialized</li>
+    <li><b>4. Methods, return &amp; scope</b> &mdash; what can an object do?</li>
+    <li><b>5. Static &amp; parameter passing</b> &mdash; shared state; values vs references</li>
+    <li><b>6. Overloading &amp; this</b> &mdash; finishing touches + full FRQ</li>
+  </ul>
+  <p class="sub" style="margin-top:26px;">Running example: <b>ProductReview</b> (Amazon) &mdash; we grow the same class in all six sessions.<br>Each <b>Example</b> slide is followed immediately by its matching <b>Practice</b>.</p>
+</section>
+
+<!-- S1 -->
+<section class="slide divider">
+  <div class="num">SESSION 1</div>
+  <h1>Instance Variables</h1>
+  <div class="desc">The state of an object &mdash; and how we declare it.</div>
+</section>
+
+<section class="slide">
+  <h2>To create a data type, you need to provide code that</h2>
+  <ul>
+    <li><b>Defines the set of values</b> <b>(instance variables)</b></li>
+    <li><b>Implements operations</b> on those values <b>(methods)</b></li>
+    <li><b>Creates and initializes</b> new objects <b>(constructors)</b></li>
+  </ul>
+  <p class="figline"><b>Instance variables</b> &mdash; declarations associate variable names with types; set of type values is &ldquo;set of values&rdquo;.<br>
+  <b>Methods</b> &mdash; like static methods; can refer to instance variables.<br>
+  <b>Constructors</b> &mdash; like a method with the same name as the type; no return type declaration; invoked by <code>new</code>, returns object of the type.</p>
+</section>
+
+<section class="slide">
+  <h2>Instance variable syntax</h2>
+<pre>private [final] data_type name;</pre>
+  <ul>
+    <li><b>usually <code>private</code></b></li>
+    <li><code>final</code> &mdash; if the field is immutable: primitive types such as <code>int</code>, <code>double</code>, etc., or immutable reference types such as <code>String</code></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Instance variables</h2>
+  <ul>
+    <li><b>Belong to objects:</b> instance variables are <u>not</u> shared among all objects of a class; each object possesses its own set of instance variables. Changes made in one object do not affect the same variable in other objects.</li>
+    <li><b>Define object state:</b> they represent the state or properties of an object.</li>
+    <li><b>Declaration:</b> declared directly within the class body, but <u>not</u> within any method, constructor, or static block.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Example 1: ProductReview&rsquo;s instance variables <span class="cont">(1 of 2)</span></h2>
+  <p class="sub">What is the <b>state</b> of one Amazon product review?</p>
+  <ul>
+    <li><code>productId</code> &mdash; immutable</li>
+    <li><code>rating</code> &mdash; immutable</li>
+    <li><code>text</code> &mdash; mutable</li>
+    <li><code>author</code> &mdash; immutable</li>
+    <li><code>images</code> &mdash; mutable</li>
+  </ul>
+  <p class="sub" style="margin-top:22px;">Ask for each field: should it ever change after the review is created?</p>
+</section>
+
+<section class="slide">
+  <h2>Example 1: ProductReview&rsquo;s instance variables <span class="cont">(2 of 2)</span></h2>
+<pre class="small"><code>public class ProductReview {
+    private final int rating;
+    private String text;
+    private final String authorId;
+    private final String productId;
+    private String[] images;
+
+    private final static int IMAGE_SIZE = 10;
+
+    public ProductReview(int rating, String authorId, String productId) { ... }
+}</code></pre>
+  <p class="sub">Which fields are <code>final</code>? Why is <code>IMAGE_SIZE</code> also <code>static</code>?</p>
+</section>
+
+<section class="slide">
+  <h2>Practice 1: give <code>Book</code> a state</h2>
+  <ul>
+    <li><code>Book.java</code> (repo <code>ch3_1</code>) has 4 fields but no constructor.</li>
+    <li><b>Part A:</b> decide which fields should be <code>final</code>, and explain why.</li>
+    <li><b>Part B:</b> write a no-args constructor with sensible defaults, plus a full constructor.</li>
+    <li class="small"><b>Hint:</b> <code>final</code> freezes the <i>reference</i> &mdash; primitives and <code>String</code> that never change get <code>final</code>.</li>
+  </ul>
+  <a class="link" href="unit3_lab1_class_anatomy.html">Full Lab &rarr; Unit 3 Lab 1: Class Anatomy &amp; Encapsulation</a>
+</section>
+
+<!-- S2 -->
+<section class="slide divider">
+  <div class="num">SESSION 2</div>
+  <h1>Access Modifiers &amp; Encapsulation</h1>
+  <div class="desc">Protecting the state &mdash; who is allowed to touch it?</div>
+</section>
+
+<section class="slide">
+  <h2>Class&rsquo;s client</h2>
+  <ul>
+    <li>Any class that uses class <i>X</i> is called a <b>client</b> of <i>X</i></li>
+    <li>Client can only access the <b>public</b> methods and variables of class <i>X</i></li>
+  </ul>
+  <div class="cols" style="margin-top:24px;">
+    <div class="col fig">
+      <div class="t">Class X</div>
+      <i>private fields</i><br><br>
+      <b>public constructor(s)</b> &nbsp;&larr; client may call<br><br>
+      <b>public methods</b> &nbsp;&larr; client may call<br><br>
+      <i>private methods</i>
+    </div>
+    <div class="arrow">&larr;</div>
+    <div class="col fig">
+      <div class="t">Class Y &mdash; a client of X</div>
+      Constructs objects of X and/or calls X&rsquo;s public methods.<br><br>
+      Everything else: compiler error.
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Public vs. Private</h2>
+  <ul>
+    <li><b>Public</b> constructors and methods of a class constitute its <b>interface</b> with classes that use it &mdash; its clients.</li>
+    <li>All instance variables are usually declared <b>private</b> &mdash; they are hidden from clients.</li>
+    <li>Static constants occasionally can be public.</li>
+    <li>&ldquo;Helper&rdquo; methods that are needed only inside the class are declared <b>private</b>.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Public vs. Private &mdash; inside the same class</h2>
+  <ul>
+    <li>A <b>private</b> field is accessible anywhere within the class&rsquo;s source code.</li>
+    <li>Any object can access and modify a private field of <b>another object of the same class</b>.</li>
+  </ul>
+<pre class="small"><code>public class Fraction {
+    private int num, denom;
+    ...
+    public Fraction multiply(Fraction other) {
+        int newNum = num * other.num;   // other is private too - OK!
+        ...
+    }
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Getter and Setter</h2>
+  <ul>
+    <li>Methods that <b>return</b> values of private fields are called <b>accessors</b> (<code>get...</code>).</li>
+    <li>Methods that <b>set</b> values of private fields are called <b>modifiers / mutators</b> (<code>set...</code>).</li>
+    <li>These are not precise categories: the same method can modify several fields, or modify a field and also return its old or new value.</li>
+  </ul>
+<pre><code>public int getRating() { return this.rating; }
+public void setText(String t) { this.text = t; }</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Encapsulation</h2>
+  <ul>
+    <li><b>Hiding the implementation details</b> of a class (making all fields and helper methods private) is called <b>encapsulation</b>.</li>
+    <li>Encapsulation helps in program maintenance: a change in one class does not affect other classes.</li>
+    <li>A client of a class interacts with the class only through well-documented public constructors and methods; this facilitates team development.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Encapsulation &mdash; what the class looks like</h2>
+<pre class="small"><code>public class MyClass {
+    private sometype myField;              // Private fields: hidden
+
+    public MyClass (...) { ... }           // Public interface:
+    public sometype myMethod (...) { ... } //   public constructors and methods
+
+    private sometype myMethod (...) { ... }// Private helpers: hidden
+}</code></pre>
+  <p class="sub">The <b>public interface</b> &mdash; public constructors and methods &mdash; is the only door into the class.</p>
+</section>
+
+<section class="slide">
+  <h2>Example 2: accessing private members from a client <span class="cont">(1 of 2)</span></h2>
+  <p class="sub"><b>Solution:</b> create a client class and try to touch <code>Fraction</code>&rsquo;s fields directly.</p>
+<pre><code>Fraction f = new Fraction(3, 4);
+System.out.println(f.num);        // ???
+f.reduce();                       // ???</code></pre>
+  <ul class="small">
+    <li>Line 2 fails: <code>num has private access in Fraction</code></li>
+    <li>Line 3 fails: <code>reduce() has private access in Fraction</code></li>
+    <li>But <code>f.getValue()</code> and <code>f.multiply(new Fraction(1, 2))</code> compile &mdash; they are <b>public</b>.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Example 2: accessing private members from a client <span class="cont">(2 of 2)</span></h2>
+<pre><code>ProductReview review = new ProductReview(5, "rachelwu", "keyboard");
+System.out.println(review.rating);      // ???
+review.text = "great";                  // ???</code></pre>
+  <ul class="small">
+    <li>Both lines fail &mdash; <code>rating</code> and <code>text</code> are private.</li>
+    <li>Compare with <code>ReviewClient.java</code>: it gets the rating out via <code>review.getRating()</code> &mdash; the public door.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Practice 2: break the wall &mdash; then fix it</h2>
+  <ul>
+    <li><b>Part A:</b> access <code>Fraction</code>&rsquo;s fields from a client class; write down the exact compiler errors.</li>
+    <li><b>Part B:</b> do the same for <code>ProductReview</code>&rsquo;s fields.</li>
+    <li><b>Part C (FRQ):</b> write accessor and mutator methods for <code>Book</code> &mdash; one setter with a precondition (<code>price &gt;= 0</code>).</li>
+    <li class="small"><b>Hint:</b> the compiler error you saw <b>is</b> encapsulation working.</li>
+  </ul>
+  <a class="link" href="unit3_lab1_class_anatomy.html">Full Lab &rarr; Unit 3 Lab 1: Getters, Setters &amp; Encapsulation</a>
+</section>
+
+<!-- S3 -->
+<section class="slide divider">
+  <div class="num">SESSION 3</div>
+  <h1>Constructors</h1>
+  <div class="desc">Creating and initializing objects &mdash; <code>new</code>, overloading, copy constructors, <code>this()</code>.</div>
+</section>
+
+<section class="slide">
+  <h2>Constructors</h2>
+  <ul>
+    <li>A constructor is a <b>procedure for creating objects</b> of the class.</li>
+    <li>A constructor often <b>initializes an object&rsquo;s fields</b>.</li>
+    <li>Constructors <b>do not have a return type</b> (not even <code>void</code>) and they do not return a value.</li>
+    <li>All constructors in a class have the <b>same name &mdash; the name of the class</b>.</li>
+    <li>Constructors may take parameters.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Constructors (continued)</h2>
+  <ul>
+    <li>If a class has more than one constructor, they must have <b>different numbers and/or types of parameters</b>.</li>
+    <li>Programmers often provide a <b>&ldquo;no-args&rdquo; constructor</b> that takes no parameters (a.k.a. arguments).</li>
+    <li>If a programmer does <b>not</b> define any constructors, Java provides one <b>default no-args constructor</b>, which allocates memory and sets fields to the default values.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Example 3: Fraction&rsquo;s four constructors <span class="cont">(1 of 2)</span></h2>
+  <p class="sub"><b>Solution:</b> one class, four ways to create a <code>Fraction</code> &mdash; note the validation and the exception.</p>
+  <div class="cols">
+    <div class="col"><pre class="small"><code>public class Fraction {
+    private int num, denom;
+
+    public Fraction() {          // no-args
+        num = 0; denom = 1;
+    }
+    public Fraction(int n) {
+        num = n; denom = 1;
+    }</code></pre></div>
+    <div class="col"><pre class="small"><code>    public Fraction(int n, int d) {
+        if (d != 0) {
+            num = n; denom = d;
+            reduce();
+        } else {
+            throw new IllegalArgumentException(
+                "Fraction construction error: denominator is 0");
+        }
+    }
+
+    public Fraction(Fraction other) {  // copy
+        num = other.num;
+        denom = other.denom;
+    }</code></pre></div>
+  </div>
+  <p class="sub">Full code: <code>ch3_1/Fraction.java</code>.</p>
+</section>
+
+<section class="slide">
+  <h2>Example 3: Fraction&rsquo;s four constructors <span class="cont">(2 of 2)</span></h2>
+  <p class="sub">Constructors of a class can call each other using the keyword <b>this</b> &mdash; a good way to avoid duplicating code.</p>
+  <div class="cols">
+    <div class="col"><pre><code>public Fraction(int n) {
+    this (n, 1);
+}</code></pre></div>
+    <div class="col"><pre class="small"><code>public Fraction(int p, int q) {
+    num = p;
+    denom = q;
+    reduce ();
+}</code></pre></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Operator <code>new</code></h2>
+  <ul>
+    <li>Constructors are invoked using the operator <b><code>new</code></b>.</li>
+    <li>Parameters passed to <code>new</code> must match the <b>number, types, and order</b> of parameters expected by one of the constructors.</li>
+  </ul>
+<pre><code>Fraction f1 = new Fraction ();
+Fraction f2 = new Fraction (5);      // 5 / 1
+Fraction f3 = new Fraction (4, 6);
+Fraction f4 = new Fraction (f3);     // copy constructor</code></pre>
+</section>
+
+<section class="slide">
+  <h2>You must create an object before you can use it</h2>
+<pre class="small"><code>private Fraction ratio;              // ratio is set to null
+
+ratio = new Fraction (2, 3);         // now ratio refers to a valid object
+
+ratio = new Fraction (3, 4);         // now ratio refers to another object
+                                     // (the old object is "garbage-collected")</code></pre>
+</section>
+
+<section class="slide">
+  <h2>References to objects</h2>
+  <div class="cols">
+    <div class="col">
+      <pre class="small"><code>Fraction f1 = new Fraction(3,7);
+Fraction f2 = f1;</code></pre>
+      <div class="fig"><div class="t">f1 and f2</div>Refer to <b><u>the same</u></b> object &mdash; one object, two names.</div>
+    </div>
+    <div class="col">
+      <pre class="small"><code>Fraction f1 = new Fraction(3,7);
+Fraction f2 = new Fraction(3,7);</code></pre>
+      <div class="fig"><div class="t">f1 and f2</div>Two <b>different</b> objects that happen to hold equal values.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Practice 3: more constructors for <code>ProductReview</code></h2>
+  <ul>
+    <li>Referencing the <code>Fraction</code> class constructors, add more constructors to <code>ProductReview</code>.</li>
+    <li><b>Validate the arguments</b> whenever needed &mdash; what should happen if <code>rating</code> is <code>7</code>?</li>
+    <li>FRQ style: part (a) constructor with validation, part (b) copy constructor, part (c) trace <code>new ProductReview()</code>.</li>
+    <li class="small"><b>Hint:</b> imitate <code>Fraction.java</code> &mdash; four constructors, validation, exception, <code>this(...)</code> chaining.</li>
+  </ul>
+  <a class="link" href="unit3_lab2_constructors.html">Full Lab &rarr; Unit 3 Lab 2: Constructors &amp; Initialization</a>
+</section>
+
+<!-- S4 -->
+<section class="slide divider">
+  <div class="num">SESSION 4</div>
+  <h1>Methods, <code>return</code> &amp; Scope</h1>
+  <div class="desc">What an object can do &mdash; and where variables are visible.</div>
+</section>
+
+<section class="slide">
+  <h2>Methods</h2>
+<pre><code>public [or private] returnType
+    methodName (type1 name1, ..., typeN nameN)
+{
+    ...   // Body
+}</code></pre>
+  <ul>
+    <li><b>To define a method:</b>
+      <ul class="small">
+        <li>decide between public and private (usually public)</li>
+        <li>give it a name</li>
+        <li>specify the types of parameters and give them names</li>
+        <li>specify the method&rsquo;s return type or choose <code>void</code></li>
+        <li>write the method&rsquo;s code</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Methods (rules)</h2>
+  <ul>
+    <li>A method is always defined <b>inside a class</b>.</li>
+    <li>A method returns a value of the specified type unless it is declared <code>void</code>.</li>
+    <li>The return type can be any primitive data type or a class type.</li>
+    <li>A method&rsquo;s parameters can be of any primitive data types or class types.</li>
+    <li><b>Empty parentheses</b> indicate that a method takes no parameters: <code>public [or private] returnType methodName ()</code></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Methods &mdash; Java style</h2>
+  <ul>
+    <li>A method name starts with a <b>lowercase</b> letter.</li>
+    <li>Method names often sound like <b>verbs</b>.</li>
+    <li>A method that returns the value of a field often starts with <code>get</code>: <code>getWidth</code>, <code>getX</code>.</li>
+    <li>A method that sets the value of a field often starts with <code>set</code>: <code>setLocation</code>, <code>setText</code>.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2><code>return</code> statement</h2>
+  <ul>
+    <li>A method, unless <b><code>void</code></b>, returns a value of the specified type to the calling method.</li>
+    <li>The <b><code>return</code></b> statement is used to immediately quit the method and return a value. The type of the return value must match the method&rsquo;s declared return type.</li>
+  </ul>
+<pre><code>return expression;</code></pre>
+</section>
+
+<section class="slide">
+  <h2><code>return</code> &mdash; class types</h2>
+  <ul>
+    <li>If its return type is a class, the method returns a <b>reference to an object</b> (or <code>null</code>).</li>
+    <li>Often the returned object is created in the method using <code>new</code>. The returned object can also come from a parameter or from a call to another method.</li>
+  </ul>
+<pre><code>public Fraction inverse() {
+    if (num == 0)
+        return null;
+    return new Fraction (denom, num);
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2><code>return</code> &mdash; several return statements</h2>
+  <ul><li>A method can have several return statements; then <b>all but one</b> of them must be inside an <b>if</b> or <b>else</b> (or in a switch):</li></ul>
+<pre class="small"><code>public someType myMethod (...)
+{
+    ...
+    if (...)
+        return &lt;expression1&gt;;
+    else if (...)
+        return &lt;expression2&gt;;
+    ...
+    return &lt;expression3&gt;;
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2><code>return</code> &mdash; boolean methods</h2>
+  <ul><li>A <b>boolean</b> method can return <code>true</code>, <code>false</code>, or the result of a Boolean expression:</li></ul>
+<pre><code>public boolean myMethod (...)
+{
+    ...
+    if (...)
+        return true;
+    ...
+    return n % 2 == 0;
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2><code>return</code> &mdash; void methods</h2>
+  <ul><li>A <b>void</b> method can use a <code>return</code> statement to quit the method early. (No need for a redundant <code>return;</code> at the end.)</li></ul>
+<pre><code>public void myMethod (...)
+{
+    ...
+    if (...)
+        return;
+    ...
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Scope and access</h2>
+  <ul>
+    <li><b>Local variables</b> are variables declared in the headers and bodies of blocks of code.</li>
+    <li>Local variables can only be accessed in the block in which they are declared.</li>
+    <li>When there is a local variable or parameter with the <b>same name</b> as an instance variable, the name refers to the <b>local variable</b>.</li>
+    <li>Local variables declared inside a method <b>cannot</b> be declared as <code>public</code> or <code>private</code>.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Example 4: methods &amp; scope in action <span class="cont">(1 of 3)</span></h2>
+  <p class="sub"><b>Code demo:</b> Stopwatch &mdash; a tiny but complete class. One field, one constructor, one method.</p>
+<pre class="small"><code>public class Stopwatch {
+    private final long startTime;
+
+    public Stopwatch() {
+        startTime = System.currentTimeMillis();
+    }
+
+    public double elapsedTime() {
+        long endTime = System.currentTimeMillis();
+        return endTime - startTime;
+    }
+}</code></pre>
+  <p class="sub">Something is off in <code>elapsedTime()</code>. We&rsquo;ll fix it in the practice.</p>
+</section>
+
+<section class="slide">
+  <h2>Example 4: methods &amp; scope in action <span class="cont">(2 of 3)</span></h2>
+  <p class="sub">This class does not compile. Which of the following best explains why?</p>
+  <div class="cols">
+    <div class="col"><pre class="small"><code>public class Info {
+    private String name;
+    private int number;
+
+    public Info(String n, int num) {
+        name = n;
+        number = num;
+    }
+
+    public void changeName(String newName) {
+        name = newName;
+    }
+
+    public int addNum(int n) {
+        num += n;
+        return num;
+    }
+}</code></pre></div>
+    <div class="col" style="flex:0.9;">
+      <ul class="small" style="list-style:none;padding-left:0;">
+        <li><b>(A)</b> The class is missing an accessor method.</li>
+        <li><b>(B)</b> The instance variables <code>name</code> and <code>number</code> should be designated <code>public</code> instead of <code>private</code>.</li>
+        <li><b>(C)</b> The return type for the <code>Info</code> constructor is missing.</li>
+        <li><b>(D)</b> The variable <code>num</code> is not defined in the <code>addNum</code> method.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Example 4: methods &amp; scope in action <span class="cont">(3 of 3)</span></h2>
+  <p class="sub">Find every compile error in this class.</p>
+<pre><code>public class Circle {
+    private double radius;
+
+    public double computeArea() {
+        private double pi = 3.14159;
+        public double area = pi * radius * radius;
+        return area;
+    }
+
+    // Constructor not shown.
+}</code></pre>
+  <p class="small"><b>Hint:</b> two lines inside <code>computeArea()</code> break the scope rules. Which ones &mdash; and why?</p>
+</section>
+
+<section class="slide">
+  <h2>Practice 4: fix Stopwatch, validate rating</h2>
+  <ul>
+    <li><b>Part A (debug):</b> <code>Stopwatch.elapsedTime()</code> &mdash; what unit is it really returning? Fix it so it returns <b>seconds</b> as a <code>double</code>.</li>
+    <li><b>Part B (FRQ):</b> add <code>public boolean isValidRating()</code> to <code>ProductReview</code> &mdash; valid if rating is between 1 and 5 (inclusive). Return the Boolean expression directly.</li>
+    <li><b>Part C:</b> rewrite the <code>Info</code> class from the example so it compiles.</li>
+    <li class="small"><b>Hint:</b> a boolean method can return the expression itself &mdash; no <code>if ... return true; else ...</code></li>
+  </ul>
+  <a class="link" href="unit3_lab3_instance_methods.html">Full Lab &rarr; Unit 3 Lab 3: Instance Methods &amp; Calculations</a>
+</section>
+
+<!-- S5 -->
+<section class="slide divider">
+  <div class="num">SESSION 5</div>
+  <h1>Static &amp; Parameter Passing</h1>
+  <div class="desc">Class-level state, and what really gets copied when you call a method.</div>
+</section>
+
+<section class="slide">
+  <h2>Static variables</h2>
+  <ul>
+    <li>A static variable, also known as a <b>class variable</b>, is associated with the <b>class</b>, not with individual objects of the class.</li>
+    <li>There is <b>only one copy</b> of a static variable, <b>shared</b> among all instances of the class.</li>
+    <li>They can be accessed directly using the class name (e.g., <code>ClassName.variableName</code>) without requiring an object instance.</li>
+    <li>Commonly used for constants or values that should be shared by all objects of a class.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Static methods</h2>
+  <ul>
+    <li>A static method belongs to the <b>class</b>, not to an object instance.</li>
+    <li>Called directly using the class name (e.g., <code>ClassName.methodName()</code>) without creating an object.</li>
+    <li>Static methods can only access <b>other static members</b> directly. They <b>cannot</b> directly access non-static instance variables or methods &mdash; those require an object instance to exist.</li>
+    <li>Often used for utility functions or helpers that are independent of any specific object&rsquo;s state.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Passing parameters &mdash; any expression works</h2>
+  <p class="sub">Any expression that has an appropriate data type can serve as a parameter:</p>
+<pre class="small"><code>double u = 3, v = -4;
+...
+Polynomial p = new Polynomial (1.0, -(u + v), u * v);
+double y = p.getValue (2 * v - u);</code></pre>
+<pre class="small"><code>public class Polynomial {
+    public Polynomial (double a, double b, double c) { ... }
+    public double getValue (double x) { ... }
+    ...
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Passing parameters &mdash; promotion</h2>
+  <ul>
+    <li>A &ldquo;smaller&rdquo; type can be <b>promoted</b> to a &ldquo;larger&rdquo; type (for example, <code>int</code> to <code>long</code>, <code>float</code> to <code>double</code>).</li>
+    <li><code>int</code> is promoted to <code>double</code> when necessary:</li>
+  </ul>
+<pre><code>...
+Polynomial p = new Polynomial (1, -5, 6);   // same as (1.0, -5.0, 6.0)
+double y = p.getValue (3);                 // same as (3.0)</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Example 5: static &amp; parameter passing <span class="cont">(1 of 3)</span></h2>
+  <p class="sub"><b>Solution:</b> <code>static</code> in code &mdash; note <code>main</code> runs without any <code>Store</code> object existing.</p>
+<pre class="small"><code>public class Store {
+
+    public static int count = 0;          // static variable
+
+    public static int getCount() {
+        return count;                     // static method / class method
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Inside main");
+    }
+}</code></pre>
+  <p class="sub">Output: <code>Inside main</code></p>
+</section>
+
+<section class="slide">
+  <h2>Example 5: static &amp; parameter passing <span class="cont">(2 of 3)</span></h2>
+  <p class="sub"><b>Solution:</b> primitives are always passed <b>by value</b> &mdash; the value is copied into the parameter.</p>
+  <div class="cols">
+    <div class="col"><pre class="small"><code>double x = 3.0;
+double y = p.getValue ( x );
+// x: 3.0 --copy--&gt; u: 3.0
+// u acts like a local variable</code></pre></div>
+    <div class="col"><pre class="small"><code>public class Test {
+    public double square (double x) {
+        x *= x;          // x here is a COPY
+        return x;
+    }
+    public static void main(String[] args) {
+        Test calc = new Test ();
+        double x = 3.0;
+        double y = calc.square (x);
+        System.out.println (x + " " + y);
+    }
+}</code></pre>
+      <p class="small">Output: <code>3.0 9.0</code> &mdash; the original <code>x</code> is unchanged.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Example 5: static &amp; parameter passing <span class="cont">(3 of 3)</span></h2>
+  <p class="sub"><b>Solution:</b> objects are always passed as references &mdash; <b>the reference is copied, not the object</b>.</p>
+  <div class="cols">
+    <div class="col"><pre class="small"><code>Fraction f1 = new Fraction (1, 2);
+Fraction f2 = new Fraction (5, 17);
+
+Fraction f3 = f1.add (f2);</code></pre></div>
+    <div class="col"><pre class="small"><code>public class Fraction {
+    ...
+    public Fraction add (Fraction f) {
+        ...
+    }
+}</code></pre>
+      <p class="small">Parameter <code>f</code> receives a <b>copy of the reference</b> &mdash; it refers to the <b>same object</b> as <code>f2</code> (<code>num = 5, denom = 17</code>).</p>
+    </div>
+  </div>
+  <ul class="small" style="margin-top:10px;">
+    <li>A method <b>can change an object passed to it</b> (it gets a reference to the original object).</li>
+    <li>A method <b>can change the object for which it was called</b> (this object acts like an <b>implicit parameter</b>): <code>panel.setBackground(Color.BLUE);</code></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Practice 5: trace <code>MugsExamples</code></h2>
+  <ul>
+    <li><code>MugsExamples.java</code> (repo <code>ch3_1</code>): <code>spill</code> and <code>reassignMug</code>.</li>
+    <li><b>Part A (FRQ trace):</b> write the exact output of <code>main</code>, no computer allowed.</li>
+    <li><b>Part B:</b> draw the box-and-pointer diagram after each call.</li>
+    <li><b>Part C:</b> add a <code>static int reviewCount</code> to <code>ProductReview</code> &mdash; and explain why a static method cannot read <code>text</code>.</li>
+    <li class="small"><b>Hint:</b> the reference is copied, not the object &mdash; follow the copied reference, not the name.</li>
+  </ul>
+  <a class="link" href="unit3_lab3_instance_methods.html">Full Lab &rarr; Unit 3 Lab 3: Object Behaviors &amp; Calculations</a>
+</section>
+
+<!-- S6 -->
+<section class="slide divider">
+  <div class="num">SESSION 6</div>
+  <h1>Overloading &amp; <code>this</code></h1>
+  <div class="desc">Finishing touches &mdash; then a full FRQ.</div>
+</section>
+
+<section class="slide">
+  <h2>Overloaded methods</h2>
+  <ul>
+    <li>Methods <b><u>of the same class</u></b> that have the <b>same name</b> but different numbers or types of parameters are called <b>overloaded</b> methods.</li>
+    <li>Use overloaded methods when they perform similar tasks:</li>
+  </ul>
+<pre><code>public void move (int x, int y)        { ... }
+public void move (double x, double y)  { ... }
+public void move (Point p)             { ... }
+
+public Fraction add (int n)            { ... }
+public Fraction add (Fraction other)   { ... }</code></pre>
+</section>
+
+<section class="slide">
+  <h2>How the compiler picks one</h2>
+  <ul>
+    <li>The compiler treats overloaded methods as <b>completely different methods</b>.</li>
+    <li>The compiler knows which one to call based on the <b>number and the types of the parameters</b> passed to the method.</li>
+  </ul>
+  <div class="cols">
+    <div class="col"><pre class="small"><code>Circle circle = new Circle(5);
+circle.move (50, 100);
+
+Point center = new Point(50, 100);
+circle.move (center);</code></pre></div>
+    <div class="col"><pre class="small"><code>public class Circle {
+    public void move (int x, int y) { ... }
+    public void move (Point p)      { ... }
+    ...
+}</code></pre></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Return type alone is not enough</h2>
+  <p class="sub">The return type alone is <b>not</b> sufficient for making a distinction between overloaded methods:</p>
+<pre><code>public class Circle {
+    public void move (int x, int y)   { ... }
+    public Point move (int x, int y)  { ... }   // compile error!
+    ...
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2>The <code>this</code> keyword</h2>
+  <ul>
+    <li>In Java, <code>this</code> is a keyword that refers to the <b>current object</b> &mdash; the object whose method or constructor is being executed.</li>
+    <li>Four common uses &mdash; Example 6 walks through all of them.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Example 6: the four uses of <code>this</code> <span class="cont">(1 of 4)</span></h2>
+  <p class="sub"><b>Solution:</b> using <code>this</code> to refer to current class instance variables.</p>
+<pre class="small"><code>class Geeks {
+    int a;
+    int b;
+
+    Geeks(int a, int b) {
+        this.a = a;      // this.a = field,  a = parameter
+        this.b = b;
+    }
+    void display() {
+        System.out.println("a = " + a + "  b = " + b);
+    }
+    public static void main(String[] args) {
+        Geeks object = new Geeks(10, 20);
+        object.display();          // a = 10  b = 20
+    }
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Example 6: the four uses of <code>this</code> <span class="cont">(2 of 4)</span></h2>
+  <p class="sub"><b>Solution:</b> using <code>this()</code> to invoke the current class constructor.</p>
+<pre class="small"><code>Geeks() {
+    this(10, 20);              // calls the constructor below
+    System.out.println("Inside  default constructor \n");
+}
+
+Geeks(int a, int b) {
+    this.a = a;
+    this.b = b;
+    System.out.println("Inside parameterized constructor");
+}
+
+public static void main(String[] args) {
+    Geeks object = new Geeks();
+}
+// Output: Inside parameterized constructor
+//         Inside  default constructor</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Example 6: the four uses of <code>this</code> <span class="cont">(3 of 4)</span></h2>
+  <p class="sub"><b>Solution:</b> using <code>this</code> as a method parameter.</p>
+<pre class="small"><code>Geeks() { a = 10; b = 20; }
+
+void display(Geeks obj) {
+    System.out.println("a = " + obj.a + "  b = " + obj.b);
+}
+
+void get() {
+    display(this);             // pass myself along
+}
+
+public static void main(String[] args) {
+    Geeks object = new Geeks();
+    object.get();              // a = 10  b = 20
+}</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Example 6: the four uses of <code>this</code> <span class="cont">(4 of 4)</span></h2>
+  <p class="sub"><b>Solution:</b> using <code>this</code> to invoke the current class method.</p>
+<pre class="small"><code>void display() {
+    this.show();               // calling function show()
+    System.out.println("Inside display function");
+}
+void show() {
+    System.out.println("Inside show function");
+}
+public static void main(String args[]) {
+    Geeks g1 = new Geeks();
+    g1.display();
+}
+// Output: Inside show function
+//         Inside display function</code></pre>
+</section>
+
+<section class="slide">
+  <h2>Trying and thinking</h2>
+  <ul style="font-size:30px;">
+    <li>Why <b>cannot</b> we invoke an instance method inside a static method?</li>
+    <li>Are you able to use the <code>this</code> keyword inside a static method?</li>
+  </ul>
+  <p class="sub" style="margin-top:26px;">Think about it &mdash; the answer is the core of Practice 5, Part C.</p>
+</section>
+
+<section class="slide">
+  <h2>Practice 6: integration FRQ &mdash; 15 minutes</h2>
+  <ul>
+    <li>A complete Class FRQ: fields + constructors with preconditions + accessors + one business method, in parts (a) / (b) / (c).</li>
+    <li>Everything from sessions 1&ndash;5 shows up exactly once.</li>
+    <li>Scoring guide included on the exercise page.</li>
+  </ul>
+  <a class="link" href="unit3_lab4_virtual_gallery.html">Capstone Project &rarr; Unit 3 Lab 4: 3D Virtual Gallery</a>
+  <p class="footer" style="position:static;margin-top:40px;">Then: Unit 3 done. Next unit builds on this exact vocabulary.</p>
+</section>
+
+<section class="slide">
+  <h2 style="font-size:44px;">Summary</h2>
+  <ul style="font-size:27px;">
+    <li><b>Instance variables</b> define an object&rsquo;s state &mdash; usually <code>private</code>, <code>final</code> when immutable.</li>
+    <li><b>Encapsulation</b>: clients interact only through the public interface.</li>
+    <li><b>Constructors</b> create and initialize objects; they may overload, chain via <code>this(...)</code>, and validate.</li>
+    <li><b>Methods</b> return a value (or nothing); local variables shadow nothing but follow strict scope rules.</li>
+    <li><b>static</b> belongs to the class; <b>primitives are copied, objects&rsquo; references are copied</b>.</li>
+    <li><b>Overloading</b> differs by parameters, never by return type; <b>this</b> is the current object.</li>
+  </ul>
+  <p class="sub" style="margin-top:24px;">Labs: <code>unit3_lab1</code> &hellip; <code>unit3_lab4</code> in <code>docs/csa/2026csa/</code>.</p>
+</section>
+
+</div>
+<div class="nav">
+  <button onclick="go(-1)">&larr;</button>
+  <button onclick="go(1)">&rarr;</button>
+</div>
+<div id="counter"></div>
+<script>
+  var TOKEN = /(\/\/[^\n]*)|("(?:[^"\\\n]|\\.)*")|\b(public|private|protected|static|final|void|int|double|boolean|String|long|float|char|class|new|return|if|else|while|for|this|throw|throws|null|true|false)\b/g;
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function hl(src){
+    var out = '', last = 0, m;
+    TOKEN.lastIndex = 0;
+    while ((m = TOKEN.exec(src))) {
+      out += esc(src.slice(last, m.index));
+      var cls = m[1] ? 'cmt' : (m[2] ? 'str' : 'kw');
+      out += '<span class="' + cls + '">' + esc(m[0]) + '</span>';
+      last = m.index + m[0].length;
+    }
+    out += esc(src.slice(last));
+    return out;
+  }
+  document.querySelectorAll('pre > code').forEach(function(c){
+    c.innerHTML = hl(c.textContent);
+  });
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var i = 0;
+  function show(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function(s, k){ s.classList.toggle('active', k === i); });
+    document.getElementById('counter').textContent = (i + 1) + ' / ' + slides.length;
+    document.getElementById('bar').style.width = (100 * (i + 1) / slides.length) + '%';
+    try { location.hash = i + 1; } catch(e) {}
+  }
+  function go(d){ show(i + d); }
+  function fit(){
+    var s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+    document.getElementById('stage').style.transform =
+      'translate(-50%,-50%) scale(' + s + ')';
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
+    else if (e.key === 'Home') { show(0); }
+    else if (e.key === 'End') { show(slides.length - 1); }
+    else if (e.key === 'p' || e.key === 'P') { window.print(); }
+  });
+  window.addEventListener('resize', fit);
+  var h = parseInt(location.hash.slice(1), 10);
+  fit(); show(isNaN(h) ? 0 : h - 1);
+</script>
+</body>
+</html>
