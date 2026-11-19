@@ -1,0 +1,43 @@
+// _sass/custom/custom.scss
+// Dock navigation sidebar to the left and make content fill the right panel with comfortable margins
+
+@media (min-width: 50rem) {
+  // 1. Dock sidebar to the left viewport edge without large centering margins
+  .side-bar {
+    width: 17.5rem !important;
+    min-width: 17.5rem !important;
+    align-items: flex-start !important;
+  }
+
+  // Ensure header, navigation list, and footer span the full sidebar width
+  .site-header,
+  .site-nav,
+  .site-footer {
+    width: 100% !important;
+  }
+
+  // 2. Extend the right panel (.main) to completely fill the rest of the screen
+  .side-bar + .main,
+  .main {
+    margin-left: 17.5rem !important;
+    margin-right: 0 !important;
+    width: calc(100% - 17.5rem) !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+  }
+
+  // 3. Make markdown content fill the right panel while preserving comfortable left & right margins
+  .main-header,
+  .main-content-wrap {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    padding-left: clamp(2.5rem, 4vw, 4.5rem) !important;
+    padding-right: clamp(2.5rem, 4vw, 4.5rem) !important;
+  }
+
+  .main-content {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
