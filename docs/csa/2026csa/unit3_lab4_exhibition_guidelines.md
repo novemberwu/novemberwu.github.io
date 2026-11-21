@@ -48,6 +48,14 @@ Because the archways are **open and see-through**, standing inside **Room $$k$$*
 > **Key Architectural Insight:**
 > With **Lazy Loading** (maintaining only a 3-room sliding window `[k - 1, k, k + 1]` in memory), the total number of teams in the exhibition (10 rooms, 20 rooms, or 50 rooms) **no longer limits JVM Heap memory**, because at most **3 rooms** ever reside in RAM/VRAM simultaneously.
 
+### Quick Reference: Recommended Per-Room Spec (1 Active Room + 2 Neighbor Rooms)
+
+| Asset Type | **Recommended Count per Room** | **Recommended Resolution per Asset** | **Max Safe Count & Resolution per Room** | **3-Room Active Window Total (`3` Rooms in RAM)** |
+| :--- | :--- | :--- | :--- | :--- |
+| **Wall Paintings (`.jpg` / `.png`)** | **`4` to `6` paintings** per room | **`2,560 × 1,600` px (2.5K QHD)** (`1–2.5 MB` `.jpg` on disk, `16 MB` RAM each) | Up to **`8` paintings** @ `2560×1600` px *(or `4` paintings @ `4096×2560` 4K)* | **12–18 active paintings** = **`192 – 288 MB` RAM** |
+| **3D Floor Statues (`.obj`)** | **`2` to `4` statues** per room | **`30,000 – 45,000` faces (triangles)** (`1.2–1.8 MB` `.obj` on disk, `~16 MB` RAM each) | Up to **`6–8` statues** @ `15k–20k` faces *(or `2` centerpiece statues @ `80k` faces)* | **6–12 active statues** = **`180k – 420k` triangles** (`~95 – 190 MB` RAM) |
+| **Combined Room Budget** | **4–6 Paintings + 2–4 Statues** | **Total Disk Size: `< 15 MB` / room** | **Total Disk Size: `< 25 MB` / room** | **`~290 – 480 MB` Total Active RAM** *(~10% of 4 GB Heap, locked **60 FPS**)* |
+
 ---
 
 ## Part 2: Empirical Stress Test & `.obj` Resolution Benchmark
