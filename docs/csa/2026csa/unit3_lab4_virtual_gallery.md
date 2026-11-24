@@ -13,15 +13,36 @@ math: mathjax
 
 ## Goals
 {: .no_toc }
-* Apply the complete object-oriented workflow from Labs 1–3 (**Writing Classes, Encapsulation, Constructor Overloading, and Instance Methods**) in an interactive 3D graphical environment.
-* Understand **Object Composition** (*has-a* relationships): a `Room` object *has four* wall `Painting` objects, *two* 3D floor `Statue` objects, and *one* `GalleryLight` object controlling the room's illumination.
-* Connect core skills across **AP CSA Units 1–3** without requiring **Unit 4 (Data Collection / Arrays / ArrayLists)**:
-  * **Unit 1 (Elementary Programming):** Primitive variables (`float`, `int`, `boolean`), `Math.sqrt`/`Math.pow` for 2D Euclidean distance, and `String` methods (`toUpperCase()`).
-  * **Unit 2 (If/Else & Loops):** Compound boolean expressions (`&&`, `||`, `!`) for 3D wall and circular statue pedestal collision, `if / else-if` proximity checks, and `for` loops for repeating architectural ceiling beams and floor medallion patterns.
-  * **Unit 3 (Creating Classes):** Class anatomy, private instance variables (encapsulation), **overloaded constructors with `this(...)`**, instance methods, and object composition (`Room` composed of `Painting` and `Statue` instances).
-* Curate **4 wall paintings** (`.png`/`.jpg`) and **2 floor sculptures** (`.obj` 3D meshes or Renaissance marble styles) with AP 2D Art analysis (Form, Content, Context).
-* Practice a real-world **Software Development Life Cycle (SDLC)**: plan architecture and asset budgets with your partner, configure a local development environment, use **Git** branching and incremental commits, and verify your room with automated tests and 3D walkthrough checklists.
-* Implement your own custom 3D museum gallery room using the starter kit in `~/Documents/Processing/APCSA_GalleryStarter`.
+* **Apply AP CSA Units 1–3 (No Unit 4 Arrays):** Combine primitives, `Math`, and `String` (**Unit 1**), `if/else`, compound booleans, and `for` loops (**Unit 2**), with encapsulation, overloaded constructors, instance methods, and composition (**Unit 3**).
+* **Build a Composed 3D Gallery Room:** Design a custom `Room` class in Processing (`P3D`) composed of **4 wall `Painting` objects**, **2 floor `Statue` objects**, and **1 `GalleryLight`**.
+* **Collaborate with AP 2D Art:** Curate artworks and 3D models (`.jpg`/`.png`/`.obj`) with Form, Content, and Context placards inside `APCSA_GalleryStarter`.
+* **Practice Software Engineering & SDLC:** Plan your room design, manage incremental work with **Git** branching and commits, and verify collisions, lighting, and doorway integration before exhibition day.
+
+## Key Dates
+{: .no_toc }
+
+`Nov 25`{: .label .label-blue } **Kick-off & Establish Joint Team** &nbsp;·&nbsp; `Nov 26`{: .label .label-green } **Project Starts** &nbsp;·&nbsp; `Dec 16`{: .label .label-yellow } **Exhibition & Presentation** &nbsp;·&nbsp; `Dec 23`{: .label .label-red } **Final Turn-In Deadline**
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'critBkgColor': '#d93829', 'critBorderColor': '#991b1b', 'activeTaskBkgColor': '#2563eb', 'activeTaskBorderColor': '#1d4ed8', 'taskBkgColor': '#475569', 'taskBorderColor': '#334155', 'sectionBkgColor': '#f8fafc', 'altSectionBkgColor': '#eef2ff'}}}%%
+gantt
+    title 3D Virtual Gallery Capstone Schedule (Nov 25 – Dec 23)
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %d
+    tickInterval 4day
+
+    section Key Dates & Launch
+    ★ NOV 25 — Kick-off & Establish Joint Team :crit, m1, 2026-11-25, 1d
+    ★ NOV 26 — Project Starts                  :crit, m2, 2026-11-26, 1d
+
+    section Development (SDLC)
+    Build Room, Artworks, Statues & Git Commits :active, dev, 2026-11-26, 2026-12-16
+
+    section Showcase & Deadline
+    ★ DEC 16 — Exhibition & Presentation       :crit, m3, 2026-12-16, 1d
+    Post-Exhibition Polish & Final Testing     :polish, 2026-12-17, 2026-12-23
+    ★ DEC 23 — Final Turn-In Deadline          :crit, m4, 2026-12-23, 1d
+```
 
 ## Task Summary
 {: .no_toc .text-delta }
@@ -62,6 +83,9 @@ Welcome to the **AP CSA Virtual Museum Capstone Project**! In this lab, you will
 |   +--------------------+     +------------------------------+                   |
 +---------------------------------------------------------------------------------+
 ```
+
+![AP CSA & AP 2D Art — 3D Virtual Gallery Demo](../../../assets/images/2026csa.jpg)
+
 
 ### How the Multi-Room Museum Works
 1. Every student room is an encapsulated Java class centered at local coordinates $$(0, 0)$$.
