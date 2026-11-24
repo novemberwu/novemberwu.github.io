@@ -20,6 +20,7 @@ math: mathjax
   * **Unit 2 (If/Else & Loops):** Compound boolean expressions (`&&`, `||`, `!`) for 3D wall and circular statue pedestal collision, `if / else-if` proximity checks, and `for` loops for repeating architectural ceiling beams and floor medallion patterns.
   * **Unit 3 (Creating Classes):** Class anatomy, private instance variables (encapsulation), **overloaded constructors with `this(...)`**, instance methods, and object composition (`Room` composed of `Painting` and `Statue` instances).
 * Curate **4 wall paintings** (`.png`/`.jpg`) and **2 floor sculptures** (`.obj` 3D meshes or Renaissance marble styles) with AP 2D Art analysis (Form, Content, Context).
+* Practice a real-world **Software Development Life Cycle (SDLC)**: plan architecture and asset budgets with your partner, configure a local development environment, use **Git** branching and incremental commits, and verify your room with automated tests and 3D walkthrough checklists.
 * Implement your own custom 3D museum gallery room using the starter kit in `~/Documents/Processing/APCSA_GalleryStarter` (or pure Java in `~/src/APCSA_GalleryStarter`).
 
 ## Task Summary
@@ -513,42 +514,106 @@ public boolean canMoveTo(float nextX, float nextZ) {
 > Read the companion guide **[Unit 3 Lab 4 Addendum: 3D Statue (`.obj`) Benchmarks & Exhibition Guidelines](unit3_lab4_exhibition_guidelines.html)** for `.obj` polygon count targets (`30,000–50,000` triangles), Blender *Decimate* instructions, and 10-team exhibition lazy-loading architecture.
 
 
-## Part6. How to Configure JVM Heap Size (-Xms / -Xmx)
+## Part 6: Development Environment Setup, Git & SDLC Workflow
 
-#### A. Via Command Line (src/APCSA_GalleryStarter/scripts/run.sh:33-40)
+In real software engineering, writing code is only one phase of the **Software Development Life Cycle (SDLC)**. Before editing `Room2_StudentTemplate`, every team must set up a clean local environment and follow a disciplined Git workflow so all 10 teams' rooms integrate smoothly on Exhibition Day.
 
-I updated src/APCSA_GalleryStarter/scripts/run.sh to default to a 4 GB max heap (-Xms512m -Xmx4g):
+### 1. Development Environment Setup (Choose Option A or Option B)
 
-    JAVA_OPTS="${JAVA_OPTS:--Xms512m -Xmx4g}"
+#### Option A: IntelliJ IDEA — Pure Java Project *(Recommended for AP CSA Students)*
+1. **Verify JDK 17+:** Open a terminal and run `java -version` (confirm Java 17 or newer is installed).
+2. **Open the Starter Folder:** Open `APCSA_GalleryStarter` in IntelliJ IDEA.
+   * Dependencies in `lib/` (`core-*.jar`, JOGL, GlueGen) are already linked via `.idea/APCSA_GalleryStarter.iml`.
+   * Two shared Run Configurations appear automatically in the top-right dropdown:
+     * **`Run Virtual Gallery (4GB Heap)`** — launches `APCSA_GalleryStarter` with `-Xms512m -Xmx4g`.
+     * **`Run Gallery Tests`** — runs `GalleryTests` with assertions enabled (`-ea`).
+3. **One-Click Fallback Launchers:**
+   * **macOS:** Double-click `Run_Gallery_Mac.command` or run `./scripts/run.sh` in terminal (`./scripts/run.sh --test` for unit tests).
+   * **Windows:** Double-click `Run_Gallery_Windows.bat` or run `powershell -ExecutionPolicy Bypass -File scripts\run.ps1`.
+4. **Manual JVM Heap Configuration (if creating a custom Run Configuration):**
+   * **IntelliJ IDEA:** *Run Dropdown → Edit Configurations → Modify options → Add VM options* → enter `-Xms512m -Xmx4g`.
+   * **Terminal (`scripts/run.sh`):** Defaults to `JAVA_OPTS="-Xms512m -Xmx4g"`. Override if needed via:
+     ```sh
+     JAVA_OPTS="-Xms1g -Xmx8g" ./scripts/run.sh
+     ```
 
-You can also override it on the fly when launching from the terminal:
+#### Option B: Processing 4 IDE *(Recommended for Quick Visual Preview / AP 2D Art Partners)*
+1. Download and install **Processing 4** from [processing.org](https://processing.org/download).
+2. Open **Processing → Settings...** (`Cmd + ,` on macOS / `Ctrl + ,` on Windows), check **Increase maximum available memory to:**, and set it to **`4096` MB**.
+3. Select **File → Open...** and open **`APCSA_GalleryStarter.pde`** *(always open the `.pde` file whose name matches the folder name)*.
+4. Click the **Play (`▶`)** button. *(Or launch from terminal via `/Applications/Processing.app/Contents/MacOS/Processing cli --sketch=~/Documents/Processing/APCSA_GalleryStarter --run`.)*
 
-    JAVA_OPTS="-Xms1g -Xmx8g" ./scripts/run.sh
-
-#### B. In IntelliJ IDEA
-
-1. Click the run configuration dropdown at the top-right (APCSA_GalleryStarter) → Edit Configurations...
-2. Click Modify options (or press Alt+M / Cmd+Shift+O) → check Add VM options.
-3. In the VM options box, enter:
-   -Xms512m -Xmx4g
-
-4. Click Apply and OK.
-
-#### C. In Processing 4 IDE (~/Documents/Processing/APCSA_GalleryStarter)
-
-1. Open Processing 4 and go to Processing → Settings... (or Preferences... on older builds, Cmd + ,).
-2. Check "Increase maximum available memory to:" and set the value to 4096 MB (or 8192 MB).
-3. Click OK and restart the sketch.
 ---
 
-## Capstone Rubric & AP CSA Learning Standards
+### 2. Git Version Control & Team SDLC Workflow
+
+Every team must manage their work using **Git** following the 5 SDLC phases:
+
+```
+  [1. Plan & Design] ---> [2. Branch & Implement] ---> [3. Test & Debug] ---> [4. Review & Optimize] ---> [5. Submit PR]
+   Room layout, theme,     Incremental commits on       Run GalleryTests +     Verify image <= 2560px,     Clean git status,
+   coordinates, assets     teamX-<theme> branch         3D collision/HUD       .obj <= 50k faces           ready for exhibition
+```
+
+#### Step-by-Step Git Commands
+1. **Clone the Repository & Create Your Team Branch:**
+   ```sh
+   git clone <repository-url>
+   cd APCSA_GalleryStarter
+   git checkout -b teamX-renaissance-room
+   ```
+   *(Never commit directly to `main`! Working on a dedicated branch isolates your team's room and prevents merge conflicts with other teams.)*
+2. **Commit Incrementally at Each Milestone (Minimum 4–5 Commits):**
+   Do **not** dump the entire project in a single commit at the end of Period 5. Commit after each verified milestone:
+   ```sh
+   git status
+   git add src/main/java/Room2_StudentTemplate.java data/
+   git commit -m "feat(room2): configure GalleryLight and add 4 curated paintings"
+   ```
+   Recommended commit milestones:
+   * **Commit 1:** Room title, curator credit, `GalleryLight`, and `for`-loop architectural decor (ceiling beams & floor medallions).
+   * **Commit 2:** 4 wall `Painting` objects + optimized images (`<= 2560px`) in `data/`.
+   * **Commit 3:** 2 floor `Statue` objects + decimated `.obj`/`.mtl`/`.png` files (`<= 50k` faces) in `data/`.
+   * **Commit 4:** Proximity selectors (`getActivePainting`, `getActiveStatue`) & wall/pedestal collision (`canMoveTo`).
+   * **Commit 5:** Bug fixes, lighting tuning, and final test verification.
+3. **Keep Your Repository Clean:**
+   * Always run `git status` before committing. Never commit compiled `.class` files, `build/`, `out/`, `.DS_Store`, or raw 200 MB gigapixel downloads.
+   * Accidentally deleted or broke a file? Recover the last committed version immediately with:
+     ```sh
+     git restore <filename>
+     ```
+4. **Push & Submit for Integration:**
+   ```sh
+   git push -u origin teamX-renaissance-room
+   ```
+   Verify that `./scripts/run.sh --test` (or **Run Gallery Tests**) passes **100%** before opening your Pull Request for teacher integration!
+
+---
+
+## Capstone Rubric & Engineering Standards (100 Points)
+
+This rubric balances **AP CSA Units 1–3 OOP mastery (55%)**, **real-world Software Engineering & SDLC process (35%)**, and **cross-disciplinary AP 2D Art curatorial quality (10%)**:
+
+### Part A: AP CSA Units 1–3 Technical & OOP Mastery (55 Points)
 
 | Criteria | Points | Description |
 | :--- | :---: | :--- |
-| **Encapsulation & Composition** | 20 pts | All room fields (`roomTitle`, `curatorNames`, 4 `Painting` objects, 2 `Statue` objects) are strictly `private`. |
-| **Constructor & Overloading** | 25 pts | Constructor cleanly instantiates all 4 `Painting` objects and 2 `Statue` objects (using full or overloaded `Statue` constructors) with valid 3D coordinates. |
-| **Iterative Architectural Decor** | 15 pts | Uses `for` loops to generate ceiling beams and floor inlays, and calls `.display(engine)` on all 4 paintings and 2 statues. |
-| **Proximity & Selection** | 20 pts | `getActivePainting` and `getActiveStatue` cleanly execute `isVisitorNear` checks and return the active object or `null`. |
-| **Wall & Pedestal Collision** | 10 pts | Uses compound boolean operators (`&&`, `||`, `!`) to enforce wall boundaries, open doorway walk-through access, and circular statue pedestal collision (`collidesWithVisitor`). |
-| **Curatorial Quality** | 10 pts | Complete, insightful AP 2D Art entries for all 4 paintings and 2 sculptures with textures/models in `data/`. |
-| **Total** | **100 pts** | **Mastery of AP CSA Units 1–3!** |
+| **Encapsulation & Composition (Unit 3)** | **15 pts** | All room fields (`roomTitle`, `curatorNames`, 4 `Painting`, 2 `Statue`, 1 `GalleryLight`) are strictly `private`; clean *has-a* object composition without altering teacher framework interfaces. |
+| **Constructors, Overloading & 3D Placement (Unit 3)** | **15 pts** | Constructor cleanly instantiates `GalleryLight`, all 4 `Painting` objects, and 2 `Statue` objects (using full or overloaded constructors) with valid non-overlapping 3D coordinates that leave North/South doorways clear. |
+| **Iterative Architectural Decor (Unit 2)** | **10 pts** | Uses `for` loops with proper loop bounds to generate repeating ceiling beams and floor medallions, and cleanly invokes `.display(engine)` on all room objects. |
+| **Selection, Proximity & Collision Logic (Unit 2)** | **15 pts** | `getActivePainting` and `getActiveStatue` use clean `if / else-if / else` selection with `isVisitorNear` (and safe `null` handling); `canMoveTo` uses compound booleans (`&&`, <code>&#124;&#124;</code>, `!`) to enforce wall bounds, doorway walk-through access, and circular pedestal collision (`collidesWithVisitor`). |
+
+### Part B: Software Engineering Process & SDLC (35 Points)
+
+| Criteria | Points | Description |
+| :--- | :---: | :--- |
+| **Design, Planning & Interface Contract** | **10 pts** | Documented room design plan (curatorial theme, lighting mood, artwork coordinate map) agreed with AP 2D Art partner before coding; strictly honors the local `(0, 0)` room & `Doorway` integration contract so the room plugs directly into the multi-team exhibition. |
+| **Git Version Control & Incremental SDLC** | **15 pts** | Uses a dedicated team branch; demonstrates genuine iterative progress with **4+ meaningful, well-scoped commits** and descriptive commit messages (not a single last-minute commit); clean repository respecting `.gitignore` with zero build artifacts or oversized raw files. |
+| **Testing, Verification & Asset Optimization** | **10 pts** | All automated checks (`Run Gallery Tests` / `./scripts/run.sh --test`) pass cleanly; verified 3D walkthrough (two-way doorway travel, HUD cards, no wall/pedestal clipping); images compressed (`<= 2560px`) and `.obj` statues decimated (`<= 50,000` faces, positive indices) per exhibition specs. |
+
+### Part C: Cross-Disciplinary Curatorial Presentation (10 Points)
+
+| Criteria | Points | Description |
+| :--- | :---: | :--- |
+| **AP 2D Art Curatorial & Visual Quality** | **10 pts** | Cohesive exhibition theme, intentional `GalleryLight` mood without glare, clean framing/pedestal choices, and insightful Form, Content, and Context text for all 4 paintings and 2 sculptures. |
+| **Total** | **100 pts** | **Mastery of AP CSA Units 1–3 & Real-World Software Engineering SDLC!** |
