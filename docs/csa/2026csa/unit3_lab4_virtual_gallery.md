@@ -9,6 +9,8 @@ math: mathjax
 # Unit 3 Lab 4: Capstone — 3D Virtual Gallery in Processing
 {: .no_toc }
 
+![AP CSA & AP 2D Art — 3D Virtual Gallery Capstone Poster](../../../assets/images/APCSA2dArt.jpg)
+
 ## Goals
 {: .no_toc }
 * Apply the complete object-oriented workflow from Labs 1–3 (**Writing Classes, Encapsulation, Constructor Overloading, and Instance Methods**) in an interactive 3D graphical environment.
