@@ -84,6 +84,9 @@ Welcome to the **AP CSA Virtual Museum Capstone Project**! In this lab, you will
 +---------------------------------------------------------------------------------+
 ```
 
+![AP CSA & AP 2D Art — 3D Virtual Gallery Demo](../../../assets/images/2026csa.jpg)
+
+
 ### How the Multi-Room Museum Works
 1. Every student room is an encapsulated Java class centered at local coordinates $$(0, 0)$$.
 2. A room contains **4 `Painting` objects** mounted on the walls and **2 `Statue` objects** placed on 3D pedestals on the gallery floor.
