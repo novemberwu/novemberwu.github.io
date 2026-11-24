@@ -31,16 +31,13 @@ gantt
     axisFormat  %b %d
     tickInterval 4day
 
-    section Key Dates & Launch
     ★ NOV 25 — Kick-off & Establish Joint Team :crit, m1, 2026-11-25, 1d
     ★ NOV 26 — Project Starts                  :crit, m2, 2026-11-26, 1d
 
-    section Development (SDLC)
     Build Room, Artworks, Statues & Git Commits :active, dev, 2026-11-26, 2026-12-16
 
-    section Showcase & Deadline
     ★ DEC 16 — Exhibition & Presentation       :crit, m3, 2026-12-16, 1d
-    Post-Exhibition Polish & Final Testing     :polish, 2026-12-17, 2026-12-23
+    Polish & Final Testing     :active, 2026-12-17, 2026-12-23
     ★ DEC 23 — Final Turn-In Deadline          :crit, m4, 2026-12-23, 1d
 ```
 
