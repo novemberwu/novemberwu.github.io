@@ -17,7 +17,7 @@ math: mathjax
   * **Unit 1 (Elementary Programming):** Primitive variables (`float`, `int`, `boolean`), `Math.sqrt`/`Math.pow` for 2D Euclidean distance, and `String` methods (`toUpperCase()`).
   * **Unit 2 (If/Else & Loops):** Compound boolean expressions (`&&`, `||`, `!`) for 3D wall and circular statue pedestal collision, `if / else-if` proximity checks, and `for` loops for repeating architectural ceiling beams and floor medallion patterns.
   * **Unit 3 (Creating Classes):** Class anatomy, private instance variables (encapsulation), **overloaded constructors with `this(...)`**, instance methods, and object composition (`Room` composed of `Painting` and `Statue` instances).
-* Curate **4 wall paintings** (`.png`/`.jpg`) and **2 floor sculptures** (`.obj` 3D meshes or Renaissance marble styles) with AP Art History analysis (Form, Content, Context).
+* Curate **4 wall paintings** (`.png`/`.jpg`) and **2 floor sculptures** (`.obj` 3D meshes or Renaissance marble styles) with AP 2D Art analysis (Form, Content, Context).
 * Implement your own custom 3D museum gallery room using the starter kit in `~/Documents/Processing/APCSA_GalleryStarter` (or pure Java in `~/src/APCSA_GalleryStarter`).
 
 ## Task Summary
@@ -97,8 +97,8 @@ class Painting {
   private String title;
   private String artist;
   private String yearAndMedium;
-  private String formAndContent;     // AP Art History Form & Content
-  private String historicalContext;  // AP Art History Context
+  private String formAndContent;     // AP 2D Art Form & Content
+  private String historicalContext;  // AP 2D Art Context
 
   private String wallSide;           // "NORTH", "SOUTH", "EAST", "WEST"
   private float x, y, z;
@@ -324,7 +324,7 @@ class GalleryLight {
    * Look around with the mouse (press `Space` to lock/unlock mouse look) or `Q` / `E`.
 4. Walk up to Botticelli's *Primavera* on the West wall and then walk toward the two rotating 3D floor statues in Room 1:
    * Notice you cannot walk *through* the statue pedestals (`collidesWithVisitor`).
-   * Notice the **Curator HUD** switches to `[3D STATUE]` mode when you approach a pedestal, displaying the sculptor, pedestal type, rotation speed, and AP Art History analysis!
+   * Notice the **Curator HUD** switches to `[3D STATUE]` mode when you approach a pedestal, displaying the sculptor, pedestal type, rotation speed, and AP 2D Art analysis!
 5. Look North: notice you can **see Room 2 directly through the open stone archway**. Walk forward (`W` or `Up Arrow`) straight through the archway into **Room 2**!
 
 ---
@@ -548,5 +548,5 @@ You can also override it on the fly when launching from the terminal:
 | **Iterative Architectural Decor** | 15 pts | Uses `for` loops to generate ceiling beams and floor inlays, and calls `.display(engine)` on all 4 paintings and 2 statues. |
 | **Proximity & Selection** | 20 pts | `getActivePainting` and `getActiveStatue` cleanly execute `isVisitorNear` checks and return the active object or `null`. |
 | **Wall & Pedestal Collision** | 10 pts | Uses compound boolean operators (`&&`, `||`, `!`) to enforce wall boundaries, open doorway walk-through access, and circular statue pedestal collision (`collidesWithVisitor`). |
-| **Curatorial Quality** | 10 pts | Complete, insightful AP Art History entries for all 4 paintings and 2 sculptures with textures/models in `data/`. |
+| **Curatorial Quality** | 10 pts | Complete, insightful AP 2D Art entries for all 4 paintings and 2 sculptures with textures/models in `data/`. |
 | **Total** | **100 pts** | **Mastery of AP CSA Units 1–3!** |
