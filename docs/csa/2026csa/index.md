@@ -56,8 +56,10 @@ In Unit 3, students progress from *using* objects to *building complete classes 
 * **[Unit 3 Lab 4: Capstone — 3D Virtual Gallery in Processing](unit3_lab4_virtual_gallery.html)**
   * Capstone project integrating **Units 1–3**: building an interactive 3D virtual art gallery with Processing (`P3D`) before advancing to Unit 4.
   * Encapsulates 2D wall paintings (`Painting`) and 3D floor sculptures (`Statue` with overloaded constructors, `.obj` models, rotating pedestals, and circular collision) connected via open, see-through `Doorway` stone archways without requiring arrays or `ArrayList`.
-* **[Unit 3 Lab 4 Addendum: 3D Statue (`.obj`) Benchmarks & Exhibition Guidelines](unit3_lab4_exhibition_guidelines.html)**
-  * Empirical stress-test benchmarks (`20 rooms × 10 statues`), Processing `PShapeOBJ` memory/polygon limitations, lazy-loading architecture for a 10-team see-through exhibition, and practical Blender `.obj` decimation/export guidelines.
+* **[Unit 3 Lab 4 Addendum: 3D Statue (`.obj`) & Painting Image Benchmarks](unit3_lab4_exhibition_guidelines.html)**
+  * Empirical stress-test benchmarks (`20 rooms × 10 statues`), Processing `PShapeOBJ` & `PImage` memory/resolution limits, lazy-loading architecture for a 10-team see-through exhibition, and practical Blender `.obj` decimation/export guidelines.
+* **[Unit 3 Lab 4 Setup: Processing 4 Installation & Git Basics](unit3_lab4_env_git_setup.html)**
+  * Step-by-step Processing 4 download & installation guide (`4096 MB` memory setup) and beginner-friendly Git workflow (`clone`, `checkout -b`, `status`, `add`, `commit`, `push`, `pull`, `restore`) for team SDLC collaboration.
 
 ---
 

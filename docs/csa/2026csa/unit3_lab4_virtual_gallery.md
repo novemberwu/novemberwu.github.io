@@ -21,7 +21,7 @@ math: mathjax
   * **Unit 3 (Creating Classes):** Class anatomy, private instance variables (encapsulation), **overloaded constructors with `this(...)`**, instance methods, and object composition (`Room` composed of `Painting` and `Statue` instances).
 * Curate **4 wall paintings** (`.png`/`.jpg`) and **2 floor sculptures** (`.obj` 3D meshes or Renaissance marble styles) with AP 2D Art analysis (Form, Content, Context).
 * Practice a real-world **Software Development Life Cycle (SDLC)**: plan architecture and asset budgets with your partner, configure a local development environment, use **Git** branching and incremental commits, and verify your room with automated tests and 3D walkthrough checklists.
-* Implement your own custom 3D museum gallery room using the starter kit in `~/Documents/Processing/APCSA_GalleryStarter` (or pure Java in `~/src/APCSA_GalleryStarter`).
+* Implement your own custom 3D museum gallery room using the starter kit in `~/Documents/Processing/APCSA_GalleryStarter`.
 
 ## Task Summary
 {: .no_toc .text-delta }
@@ -73,7 +73,7 @@ Welcome to the **AP CSA Virtual Museum Capstone Project**! In this lab, you will
 
 ## Part 2: Project File Structure
 
-The project starter files are available in Processing IDE format at `~/Documents/Processing/APCSA_GalleryStarter/` (and pure Java format at `~/src/APCSA_GalleryStarter/`):
+The project starter files are located in Processing IDE format at `~/Documents/Processing/APCSA_GalleryStarter/`:
 
 | File | Owner | Concepts & Role |
 | :--- | :--- | :--- |
@@ -316,12 +316,12 @@ class GalleryLight {
 ## Part 4: Step-by-Step Student Walkthrough
 
 ### Step 1: Launch & Explore the Starter Gallery (15 min)
-1. Open **Processing 4** and open:
+1. Make sure you have completed the **[Processing 4 Installation & Git Setup Guide](unit3_lab4_env_git_setup.html)**.
+2. Open **Processing 4** and open:
    ```text
    ~/Documents/Processing/APCSA_GalleryStarter/APCSA_GalleryStarter.pde
    ```
-   *(Or run `/Users/wuyuan/src/APCSA_GalleryStarter/scripts/run.sh` in IntelliJ / terminal).*
-2. Click **Run** (`▶`).
+3. Click **Run** (`▶`).
 3. **Controls:**
    * Move with `W` / `S` / `A` / `D` or **Arrow Keys**.
    * Look around with the mouse (press `Space` to lock/unlock mouse look) or `Q` / `E`.
@@ -501,7 +501,7 @@ public boolean canMoveTo(float nextX, float nextZ) {
 
 ## Part 5: Testing & Exhibition Verification
 
-1. Run the sketch in Processing (or IntelliJ).
+1. Run `APCSA_GalleryStarter.pde` in **Processing 4**.
 2. Stand in Room 1 and look North through the open archway—confirm you can see your Room 2 paintings and rotating statues through the doorway.
 3. Walk straight through the North archway (`W` or `Up Arrow`) into Room 2.
 4. Walk up to each of your **4 wall paintings** and **2 floor statues**:
@@ -510,83 +510,25 @@ public boolean canMoveTo(float nextX, float nextZ) {
 5. Walk back through the South doorway into Room 1 to confirm seamless two-way navigation.
 
 {: .tip }
-> **Preparing High-Resolution `.obj` Statues for the Class Exhibition:**
-> Read the companion guide **[Unit 3 Lab 4 Addendum: 3D Statue (`.obj`) Benchmarks & Exhibition Guidelines](unit3_lab4_exhibition_guidelines.html)** for `.obj` polygon count targets (`30,000–50,000` triangles), Blender *Decimate* instructions, and 10-team exhibition lazy-loading architecture.
-
-
-## Part 6: Development Environment Setup, Git & SDLC Workflow
-
-In real software engineering, writing code is only one phase of the **Software Development Life Cycle (SDLC)**. Before editing `Room2_StudentTemplate`, every team must set up a clean local environment and follow a disciplined Git workflow so all 10 teams' rooms integrate smoothly on Exhibition Day.
-
-### 1. Development Environment Setup (Choose Option A or Option B)
-
-#### Option A: IntelliJ IDEA — Pure Java Project *(Recommended for AP CSA Students)*
-1. **Verify JDK 17+:** Open a terminal and run `java -version` (confirm Java 17 or newer is installed).
-2. **Open the Starter Folder:** Open `APCSA_GalleryStarter` in IntelliJ IDEA.
-   * Dependencies in `lib/` (`core-*.jar`, JOGL, GlueGen) are already linked via `.idea/APCSA_GalleryStarter.iml`.
-   * Two shared Run Configurations appear automatically in the top-right dropdown:
-     * **`Run Virtual Gallery (4GB Heap)`** — launches `APCSA_GalleryStarter` with `-Xms512m -Xmx4g`.
-     * **`Run Gallery Tests`** — runs `GalleryTests` with assertions enabled (`-ea`).
-3. **One-Click Fallback Launchers:**
-   * **macOS:** Double-click `Run_Gallery_Mac.command` or run `./scripts/run.sh` in terminal (`./scripts/run.sh --test` for unit tests).
-   * **Windows:** Double-click `Run_Gallery_Windows.bat` or run `powershell -ExecutionPolicy Bypass -File scripts\run.ps1`.
-4. **Manual JVM Heap Configuration (if creating a custom Run Configuration):**
-   * **IntelliJ IDEA:** *Run Dropdown → Edit Configurations → Modify options → Add VM options* → enter `-Xms512m -Xmx4g`.
-   * **Terminal (`scripts/run.sh`):** Defaults to `JAVA_OPTS="-Xms512m -Xmx4g"`. Override if needed via:
-     ```sh
-     JAVA_OPTS="-Xms1g -Xmx8g" ./scripts/run.sh
-     ```
-
-#### Option B: Processing 4 IDE *(Recommended for Quick Visual Preview / AP 2D Art Partners)*
-1. Download and install **Processing 4** from [processing.org](https://processing.org/download).
-2. Open **Processing → Settings...** (`Cmd + ,` on macOS / `Ctrl + ,` on Windows), check **Increase maximum available memory to:**, and set it to **`4096` MB**.
-3. Select **File → Open...** and open **`APCSA_GalleryStarter.pde`** *(always open the `.pde` file whose name matches the folder name)*.
-4. Click the **Play (`▶`)** button. *(Or launch from terminal via `/Applications/Processing.app/Contents/MacOS/Processing cli --sketch=~/Documents/Processing/APCSA_GalleryStarter --run`.)*
+> **Companion Exhibition Guides:**
+> * **[Unit 3 Lab 4 Setup: Processing 4 Installation & Git Basics](unit3_lab4_env_git_setup.html)** — Installing Processing 4, setting `4096 MB` memory, and essential Git commands.
+> * **[Unit 3 Lab 4 Addendum: 3D Statue (`.obj`) & Painting Image Benchmarks](unit3_lab4_exhibition_guidelines.html)** — Polygon count targets (`30,000–50,000` triangles), image resolution limits (`<= 2560px`), Blender *Decimate* instructions, and 10-team exhibition guidelines.
 
 ---
 
-### 2. Git Version Control & Team SDLC Workflow
+## Part 6: Engineering Process & SDLC Workflow
 
-Every team must manage their work using **Git** following the 5 SDLC phases:
+In real software engineering, writing code is only one phase of the **Software Development Life Cycle (SDLC)**. Before editing `Room2_StudentTemplate.pde`, complete the full setup steps in **[Processing 4 Installation & Git Basics](unit3_lab4_env_git_setup.html)** and follow this 5-stage team workflow:
 
 ```
   [1. Plan & Design] ---> [2. Branch & Implement] ---> [3. Test & Debug] ---> [4. Review & Optimize] ---> [5. Submit PR]
-   Room layout, theme,     Incremental commits on       Run GalleryTests +     Verify image <= 2560px,     Clean git status,
-   coordinates, assets     teamX-<theme> branch         3D collision/HUD       .obj <= 50k faces           ready for exhibition
+   Room layout, theme,     Incremental commits on       Verify 3D collision,   Verify image <= 2560px,     Clean git status,
+   coordinates, assets     teamX-<theme> branch         HUD, light & doors     .obj <= 50k faces           ready for exhibition
 ```
 
-#### Step-by-Step Git Commands
-1. **Clone the Repository & Create Your Team Branch:**
-   ```sh
-   git clone <repository-url>
-   cd APCSA_GalleryStarter
-   git checkout -b teamX-renaissance-room
-   ```
-   *(Never commit directly to `main`! Working on a dedicated branch isolates your team's room and prevents merge conflicts with other teams.)*
-2. **Commit Incrementally at Each Milestone (Minimum 4–5 Commits):**
-   Do **not** dump the entire project in a single commit at the end of Period 5. Commit after each verified milestone:
-   ```sh
-   git status
-   git add src/main/java/Room2_StudentTemplate.java data/
-   git commit -m "feat(room2): configure GalleryLight and add 4 curated paintings"
-   ```
-   Recommended commit milestones:
-   * **Commit 1:** Room title, curator credit, `GalleryLight`, and `for`-loop architectural decor (ceiling beams & floor medallions).
-   * **Commit 2:** 4 wall `Painting` objects + optimized images (`<= 2560px`) in `data/`.
-   * **Commit 3:** 2 floor `Statue` objects + decimated `.obj`/`.mtl`/`.png` files (`<= 50k` faces) in `data/`.
-   * **Commit 4:** Proximity selectors (`getActivePainting`, `getActiveStatue`) & wall/pedestal collision (`canMoveTo`).
-   * **Commit 5:** Bug fixes, lighting tuning, and final test verification.
-3. **Keep Your Repository Clean:**
-   * Always run `git status` before committing. Never commit compiled `.class` files, `build/`, `out/`, `.DS_Store`, or raw 200 MB gigapixel downloads.
-   * Accidentally deleted or broke a file? Recover the last committed version immediately with:
-     ```sh
-     git restore <filename>
-     ```
-4. **Push & Submit for Integration:**
-   ```sh
-   git push -u origin teamX-renaissance-room
-   ```
-   Verify that `./scripts/run.sh --test` (or **Run Gallery Tests**) passes **100%** before opening your Pull Request for teacher integration!
+1. **Setup Processing 4 & Memory (`4096 MB`):** Follow [Part 1 of the Setup Guide](unit3_lab4_env_git_setup.html#part-1-installing-processing-4).
+2. **Branch & Commit Incrementally with Git:** Create a team branch (`git checkout -b teamX-<theme>`) and record **4–5 meaningful milestone commits** (`git status` → `git add` → `git commit` → `git push`) following [Part 2 of the Setup Guide](unit3_lab4_env_git_setup.html#part-2-basic-usage-of-git).
+3. **Verify Before Submitting:** Confirm your sketch compiles and runs smoothly in Processing 4 with zero console errors, clean `.gitignore` hygiene, and optimized assets (`<= 2560px` images and `<= 50k`-face `.obj` statues).
 
 ---
 
@@ -609,7 +551,7 @@ This rubric balances **AP CSA Units 1–3 OOP mastery (55%)**, **real-world Soft
 | :--- | :---: | :--- |
 | **Design, Planning & Interface Contract** | **10 pts** | Documented room design plan (curatorial theme, lighting mood, artwork coordinate map) agreed with AP 2D Art partner before coding; strictly honors the local `(0, 0)` room & `Doorway` integration contract so the room plugs directly into the multi-team exhibition. |
 | **Git Version Control & Incremental SDLC** | **15 pts** | Uses a dedicated team branch; demonstrates genuine iterative progress with **4+ meaningful, well-scoped commits** and descriptive commit messages (not a single last-minute commit); clean repository respecting `.gitignore` with zero build artifacts or oversized raw files. |
-| **Testing, Verification & Asset Optimization** | **10 pts** | All automated checks (`Run Gallery Tests` / `./scripts/run.sh --test`) pass cleanly; verified 3D walkthrough (two-way doorway travel, HUD cards, no wall/pedestal clipping); images compressed (`<= 2560px`) and `.obj` statues decimated (`<= 50,000` faces, positive indices) per exhibition specs. |
+| **Testing, Verification & Asset Optimization** | **10 pts** | Sketch compiles cleanly in Processing 4 with zero runtime/console errors; verified 3D walkthrough (two-way doorway travel, HUD cards, no wall/pedestal clipping); images compressed (`<= 2560px`) and `.obj` statues decimated (`<= 50,000` faces, positive indices) per exhibition specs. |
 
 ### Part C: Cross-Disciplinary Curatorial Presentation (10 Points)
 
